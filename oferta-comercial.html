@@ -11,9 +11,9 @@
       --line: #d8dee8;
       --bg: #f4f6f9;
       --card: #ffffff;
-      --accent: #0d6e6e;
-      --accent-soft: #e6f3f3;
-      --head: #0b3d4a;
+      --accent: #6366c3;
+      --accent-soft: #ececfb;
+      --head: #36349f;
     }
     * { box-sizing: border-box; }
     body {
@@ -29,35 +29,67 @@
       padding: 2rem 1.25rem 4rem;
     }
     header.hero {
-    background: linear-gradient(122deg, #36349f 0%, #6366c3 55%, #afb1ff 100%);
-    color: #fff;
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 12px 32px rgba(11, 61, 74, 0.25);
-}
-    header.hero .logo {    
-    max-width: 201px;    
-    background: rgba(255, 255, 255, 0.12); 
-    padding: 0.45rem 0.7rem;
-    
+      background: linear-gradient(122deg, #36349f 0%, #6366c3 55%, #afb1ff 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 32px rgba(54, 52, 159, 0.28);
     }
-    header.hero h1 { 
-    font-size: clamp(2.4rem, 6vw, 3.2rem);
-    letter-spacing: 0.04em;
-    font-weight: 800;
-    margin-top: 0px;
+    header.hero .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem 1.25rem;
+    }
+    header.hero .logo {
+      display: block;
+      flex: 0 0 auto;
+      max-width: min(201px, 38vw);
+      max-height: 88px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 0.45rem 0.7rem;
+    }
+    header.hero .brand-text {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    header.hero h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 7vw, 3.2rem);
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      line-height: 1.1;
     }
     header.hero p {
-      margin: 0.6rem 0 0;
+      margin: 0.55rem 0 0;
       opacity: 0.95;
-      font-size: 1.1rem;
-      color:#fff;
+      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+      color: #fff;
     }
     header.hero .date {
-      margin-top: 1.25rem;
+      margin-top: 0.75rem;
       font-size: 0.9rem;
       opacity: 0.8;
+    }
+    @media (max-width: 560px) {
+      .wrap { padding: 1rem 0.85rem 3rem; }
+      header.hero {
+        padding: 1.35rem 1.1rem;
+        border-radius: 12px;
+      }
+      header.hero .brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+      }
+      header.hero .logo {
+        max-width: 140px;
+        max-height: 64px;
+      }
     }
     section {
       background: var(--card);
@@ -96,27 +128,27 @@
       border-radius: 8px;
       border: 1px solid var(--line);
     }
-    table {
+    .table-wrap table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.92rem;
       min-width: 640px;
     }
-    th, td {
+    .table-wrap th, .table-wrap td {
       border-bottom: 1px solid var(--line);
       padding: 0.65rem 0.75rem;
       text-align: left;
       vertical-align: top;
     }
-    th {
+    .table-wrap th {
       background: var(--head);
       color: #fff;
       font-weight: 600;
       position: sticky;
       top: 0;
     }
-    tr:nth-child(even) td { background: #f8fafb; }
-    td:first-child { font-weight: 600; color: var(--head); }
+    .table-wrap tr:nth-child(even) td { background: #f8fafb; }
+    .table-wrap td:first-child { font-weight: 600; color: var(--head); }
     .price { color: var(--accent); font-weight: 700; }
     .included-list {
       list-style: none;
@@ -147,20 +179,19 @@
 <body>
   <div class="wrap">
     <header class="hero">
-     <table>
-        <tbody><tr>
-            <td style="width: 247px;">
-            <img class="logo" src="SAV.jpg" alt="Logo de la empresa" onerror="this.style.display='none'">
-        </td>
-              <td style=" padding: 0;  margin: 0;">
-              <div>
+      <div class="brand">
+        <img
+          class="logo"
+          src="SAV.jpg"
+          alt="Logo de la empresa"
+          onerror="this.style.display='none'"
+        />
+        <div class="brand-text">
           <h1>SAV</h1>
-      <p>Propuesta Comercial — Paquetes y Módulos</p>
-      <div class="date">Fecha: 13/07/2026</div>
-     </div>
-        </td>
-        </tr>
-    </tbody></table>
+          <p>Propuesta Comercial — Paquetes y Módulos</p>
+          <div class="date">Fecha: 13/07/2026</div>
+        </div>
+      </div>
     </header>
 
     <section id="introduccion">
