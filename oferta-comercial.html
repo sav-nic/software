@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAV — Propuesta Comercial</title>
+  <style>
+    :root {
+      --ink: #1a2332;
+      --muted: #5a6577;
+      --line: #d8dee8;
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --accent: #0d6e6e;
+      --accent-soft: #e6f3f3;
+      --head: #0b3d4a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    header.hero {
+    background: linear-gradient(122deg, #36349f 0%, #6366c3 55%, #afb1ff 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 32px rgba(11, 61, 74, 0.25);
+}
+    header.hero .logo {    
+    max-width: 201px;    
+    background: rgba(255, 255, 255, 0.12); 
+    padding: 0.45rem 0.7rem;
+    
+    }
+    header.hero h1 { 
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    margin-top: 0px;
+    }
+    header.hero p {
+      margin: 0.6rem 0 0;
+      opacity: 0.95;
+      font-size: 1.1rem;
+      color:#fff;
+    }
+    header.hero .date {
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    h2 {
+      margin: 0 0 0.85rem;
+      color: var(--head);
+      font-size: 1.35rem;
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 0.45rem;
+    }
+    h3 {
+      margin: 1.35rem 0 0.45rem;
+      color: var(--accent);
+      font-size: 1.08rem;
+    }
+    h3:first-of-type { margin-top: 0.35rem; }
+    p { margin: 0 0 0.85rem; color: var(--ink); }
+    ul {
+      margin: 0.35rem 0 0.85rem;
+      padding-left: 1.2rem;
+    }
+    li { margin-bottom: 0.4rem; }
+    .note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0.75rem 0 0.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 640px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--head);
+      color: #fff;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+    tr:nth-child(even) td { background: #f8fafb; }
+    td:first-child { font-weight: 600; color: var(--head); }
+    .price { color: var(--accent); font-weight: 700; }
+    .included-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+    .included-list li {
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      background: var(--accent-soft);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+    }
+    @media print {
+      body { background: #fff; }
+      .wrap { padding: 0; max-width: none; }
+      header.hero { box-shadow: none; border-radius: 0; }
+      section { break-inside: avoid; border: none; padding: 0.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+     <table>
+        <tbody><tr>
+            <td style="width: 247px;">
+            <img class="logo" src="SAV.jpg" alt="Logo de la empresa" onerror="this.style.display='none'">
+        </td>
+              <td style=" padding: 0;  margin: 0;">
+              <div>
+          <h1>SAV</h1>
+      <p>Propuesta Comercial — Paquetes y Módulos</p>
+      <div class="date">Fecha: 13/07/2026</div>
+     </div>
+        </td>
+        </tr>
+    </tbody></table>
+    </header>
+
+    <section id="introduccion">
+      <h2>1. Introducción</h2>
+      <p>
+        SAV (Sistema de Administración y Ventas) es una plataforma integral diseñada
+        para negocios que requieren control de punto de venta, caja, inventario, compras y
+        reportes en un solo ecosistema. La solución combina una interfaz moderna de
+        POS táctil, administración de turnos de caja con arqueo detallado, seguridad por
+        roles y permisos, y un panel ejecutivo para la toma de decisiones.
+      </p>
+      <p>
+        Esta propuesta presenta cuatro niveles de licenciamiento — Completo,
+        Profesional, Comercio y Estándar — que permiten adaptar la inversión al tamaño y
+        madurez operativa de cada cliente. El paquete Completo (USD 1,000) incluye todo
+        lo que el sistema.
+      </p>
+      <p>
+        Cada módulo descrito a continuación detalla su función operativa, el valor que
+        aporta al negocio y la disponibilidad según el plan contratado.
+      </p>
+    </section>
+
+    <section id="modulos">
+      <h2>2. Descripción de Módulos</h2>
+
+      <h3>2.1 Dashboard Ejecutivo</h3>
+      <p>
+        Panel de control centralizado que consolida indicadores clave de ventas,
+        inventario y operación de caja. Permite filtrar por sucursal y rango de fechas para
+        monitorear el desempeño del negocio en tiempo casi real.
+      </p>
+      <ul>
+        <li><strong>Completo / Profesional:</strong> KPIs de ventas del día y del mes, productos más vendidos, alertas de stock bajo, estado de cajas abiertas, gráficos comparativos y acceso rápido a reportes.</li>
+        <li><strong>Comercio:</strong> Cuatro tarjetas principales (ventas del día, ventas del mes, unidades vendidas, alertas de inventario) más acceso a reportes básicos.</li>
+        <li><strong>Estándar:</strong> Dashboard básico con 4 tarjetas fijas y dos reportes de consulta (ventas por período y existencias actuales). Sin filtros multi-sucursal.</li>
+      </ul>
+
+      <h3>2.2 Punto de Venta (POS)</h3>
+      <p>
+        Módulo principal de facturación en mostrador. Interfaz optimizada pantalla táctil,
+        con búsqueda rápida de productos, carrito de compras, múltiples formas de pago
+        (efectivo, tarjeta, mixto) y soporte para monedas NIO y USD.
+      </p>
+      <ul>
+        <li><strong>Ventas al contado:</strong> registro de líneas, cantidades, precios y totales con impresión de ticket.</li>
+        <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y consulta de estado de cuenta del cliente (Completo, Profesional, Comercio).</li>
+        <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después sin perder el carrito (Completo, Profesional, Comercio).</li>
+        <li><strong>Supervisor:</strong> autorización para abrir/cerrar turno, anular líneas y operaciones sensibles según permisos.</li>
+        <li><strong>Promociones y regalías:</strong> aplicación automática de descuentos y productos de regalo según reglas configuradas (Completo, Profesional, Comercio).</li>
+        <li><strong>Productos relacionados, sustitutos y surtidos:</strong> sugerencias inteligentes en el POS para aumentar el ticket promedio (solo Completo).</li>
+        <li><strong>Modo pantalla completa</strong> y colores corporativos personalizables en todos los planes.</li>
+      </ul>
+
+      <h3>2.3 Operaciones de Caja</h3>
+      <p>
+        Conjunto de herramientas para administrar el ciclo de vida de la caja registradora:
+        apertura, operación diaria, movimientos internos y cierre con arqueo.
+      </p>
+      <ul>
+        <li><strong>Apertura y cierre de turno:</strong> registro de fondo inicial y arqueo final. En planes superiores incluye billeteo por denominación; en Estándar solo totales manuales.</li>
+        <li><strong>Caja chica:</strong> registro de entradas y salidas de efectivo durante el turno (gastos menores, retiros, depósitos) con conceptos configurables.</li>
+        <li><strong>Historial de turnos:</strong> consulta de turnos cerrados con detalle de billeteo, diferencias, autorizaciones de supervisor y totales por forma de pago.</li>
+        <li><strong>Cajas registradoras:</strong> alta y configuración de puntos de venta físicos vinculados a sucursal y bodega.</li>
+        <li><strong>Terminales POS:</strong> registro de dispositivos de cobro con tarjeta asociados a cada caja.</li>
+        <li><strong>Conceptos de movimiento:</strong> catálogo de motivos para entradas/salidas de caja chica (CRUD en planes superiores; solo lectura en Estándar).</li>
+        <li><strong>Conceptos de diferencia:</strong> catálogo para clasificar faltantes o sobrantes en el arqueo (CRUD en planes superiores; solo lectura en Estándar).</li>
+        <li><strong>Configuración POS:</strong> parámetros operativos como billeteo obligatorio u opcional, comportamiento de impresión y opciones de interfaz.</li>
+      </ul>
+
+      <h3>2.4 Facturación y Devoluciones</h3>
+      <p>
+        Módulo de consulta y gestión de documentos de venta fuera del POS en tiempo real.
+      </p>
+      <ul>
+        <li>Listado de facturas emitidas con filtros por fecha, cliente y estado.</li>
+        <li>Detalle de factura: líneas, pagos aplicados, usuario y caja que la generó.</li>
+        <li>Devoluciones y anulaciones: reversión controlada de ventas con impacto en inventario y caja (Completo y Profesional).</li>
+        <li>Reporte de abonos: seguimiento de pagos a crédito y saldos pendientes (Completo y Profesional).</li>
+      </ul>
+
+      <h3>2.5 Productos y Catálogo</h3>
+      <p>
+        Administración del maestro de artículos que alimenta el POS y los reportes de inventario.
+      </p>
+      <ul>
+        <li>Catálogo de productos: código, descripción, categoría, marca, unidad de medida, precios y estado activo/inactivo.</li>
+        <li>Variantes y códigos de barra: soporte para múltiples presentaciones y lectura en POS.</li>
+        <li>Categorías y subcategorías: organización jerárquica para búsqueda y reportes.</li>
+        <li>Lista de precios: precios por lista, moneda o segmento de cliente.</li>
+        <li>Productos surtidos, relacionados y sustitutos: definición de kits, complementos y alternativas de venta (solo Completo).</li>
+        <li>Promociones: reglas de descuento por producto, categoría, cantidad o período (Completo y Profesional).</li>
+      </ul>
+
+      <h3>2.6 Almacén e Inventario</h3>
+      <p>
+        Control de existencias por bodega con trazabilidad de movimientos.
+      </p>
+      <ul>
+        <li>Bodegas: definición de ubicaciones de almacenamiento vinculadas a sucursales.</li>
+        <li>Ajustes de inventario: corrección manual de existencias por conteo físico o merma (disponible en todos los planes).</li>
+        <li>Entradas y recepciones: ingreso de mercadería contra orden de compra o documento de proveedor (Completo y Profesional).</li>
+        <li>Consulta de productos: saldos actuales, mínimos y kardex de movimientos.</li>
+        <li><strong>Estándar:</strong> solo ajuste manual. Las compras se realizan fuera del sistema; el usuario ingresa el stock recibido mediante ajuste positivo.</li>
+      </ul>
+
+      <h3>2.7 Compras</h3>
+      <p>
+        Ciclo de abastecimiento desde la cotización hasta la recepción en bodega.
+      </p>
+      <ul>
+        <li>Proveedores: registro de datos fiscales, contacto y condiciones.</li>
+        <li>Cotizaciones: comparación de ofertas de proveedores antes de generar la orden.</li>
+        <li>Órdenes de compra: documento formal con líneas, cantidades, costos y estado (borrador, aprobada, recibida).</li>
+        <li>Recepción: actualización automática de inventario al confirmar la llegada de mercadería.</li>
+        <li>Disponible en Completo y Profesional. No incluido en Comercio ni Estándar.</li>
+      </ul>
+
+      <h3>2.8 Catálogos Generales</h3>
+      <p>
+        Datos maestros compartidos por todos los módulos del sistema.
+      </p>
+      <ul>
+        <li>Tiendas y sucursales: estructura organizacional del negocio.</li>
+        <li>Marcas, modelos, monedas y unidades de medida.</li>
+        <li>Clientes: registro de personas y empresas con datos de contacto y crédito.</li>
+        <li><strong>En Estándar:</strong> catálogos de conceptos de caja precargados sin opción de crear ni editar registros.</li>
+      </ul>
+
+      <h3>2.9 Reportes</h3>
+      <p>
+        Motor de reportes con visor integrado y exportación para análisis gerencial.
+      </p>
+      <ul>
+        <li>Ventas: por año, por período, por producto, por categoría, devoluciones y facturas anuladas.</li>
+        <li>Inventario: existencias actuales, movimientos por producto y por categoría.</li>
+        <li>Caja: estado de turnos, diferencias de arqueo y abonos pendientes.</li>
+        <li><strong>Completo:</strong> acceso al visor de reportes y catálogo completo.</li>
+        <li><strong>Estándar:</strong> dos reportes fijos (ventas por período y existencias).</li>
+      </ul>
+
+      <h3>2.10 Seguridad y Administración</h3>
+      <p>
+        Control de acceso y configuración global del sistema.
+      </p>
+      <ul>
+        <li>Usuarios: alta, bloqueo, asignación a sucursal y caja.</li>
+        <li>Roles y permisos: definición granular de qué menús y acciones puede ejecutar cada perfil.</li>
+        <li>Parámetros del sistema: vigencia de licencia, datos de empresa, branding y configuración general.</li>
+        <li><strong>Estándar:</strong> un administrador y hasta dos cajeros; sin creación de roles personalizados.</li>
+      </ul>
+    </section>
+
+    <section id="planes">
+      <h2>3. Tabla Comparativa de Planes</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Completo</th>
+              <th>Profesional</th>
+              <th>Comercio</th>
+              <th>Estándar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Precio licencia (USD)</td>
+              <td class="price">$1,000</td>
+              <td class="price">$700</td>
+              <td class="price">$450</td>
+              <td class="price">$300</td>
+            </tr>
+            <tr><td>Usuarios incluidos</td><td>Ilimitados</td><td>15</td><td>8</td><td>3</td></tr>
+            <tr><td>Sucursales</td><td>Ilimitadas</td><td>Hasta 5</td><td>Hasta 2</td><td>1</td></tr>
+            <tr><td>Bodegas</td><td>Ilimitadas</td><td>Hasta 10</td><td>Hasta 3</td><td>1</td></tr>
+            <tr><td>Cajas registradoras</td><td>Ilimitadas</td><td>Hasta 10</td><td>Hasta 3</td><td>1</td></tr>
+            <tr><td>POS — venta contado</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>POS — crédito y abonos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>POS — facturas en espera</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>POS — promociones y regalías</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>POS — productos relacionados/sustitutos</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Apertura/cierre con billeteo</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Solo totales manuales</td></tr>
+            <tr><td>Caja chica y movimientos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Historial de turnos</td><td>Completo</td><td>Completo</td><td>90 días</td><td>30 días</td></tr>
+            <tr><td>Compras / OC / recepción</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Inventario — ajuste manual</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Admin promociones y relaciones producto</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr>
+              <td>Dashboard</td>
+              <td>Ejecutivo completo</td>
+              <td>Ejecutivo completo</td>
+              <td>4 KPIs + 3 Reportes</td>
+              <td>Básico</td>
+            </tr>
+            <tr>
+              <td>Reportes</td>
+              <td>Catálogo completo</td>
+              <td>Ventas + inventario</td>
+              <td>3 reportes</td>
+              <td>2 reportes</td>
+            </tr>
+            <tr>
+              <td>Conceptos mov./dif. caja</td>
+              <td>CRUD</td>
+              <td>CRUD</td>
+              <td>CRUD</td>
+              <td>Solo consulta</td>
+            </tr>
+            <tr><td>Roles personalizados</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>Soporte</td><td>3 meses</td><td>3 meses</td><td>2 meses</td><td>2 meses</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">*CRUD = Creación, Lectura, Actualización y Eliminación de datos.</p>
+    </section>
+
+    <section id="servicios-incluidos">
+      <h2>4. Servicios Incluidos</h2>
+      <ul class="included-list">
+        <li>Instalación</li>
+        <li>Capacitación (8 horas)</li>
+        <li>Migración de productos y clientes</li>
+      </ul>
+    </section>
+
+    <section id="servicios-adicionales">
+      <h2>4. Servicios Adicionales (opcionales)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Precio (USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Reportes adicionales</td><td class="price">$30 c/u</td></tr>
+            <tr><td>Soporte (Después del tiempo incluido)</td><td class="price">$15/hora</td></tr>
+            <tr><td>Sucursal adicional</td><td class="price">$20 c/u</td></tr>
+            <tr><td>Caja adicional</td><td class="price">$20 c/u</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="conclusion">
+      <h2>5. Conclusión</h2>
+      <p>
+        SAV ofrece una ruta de crecimiento clara: el cliente puede iniciar con el plan
+        Estándar (USD 300) para digitalizar ventas y control básico de inventario en un
+        solo punto, y escalar a Comercio, Profesional o Completo conforme abra
+        nuevas sucursales, requiera compras integradas o necesite promociones y
+        reportes avanzados.
+      </p>
+      <p>
+        El plan Completo a USD 1,000 representa la solución sin límites operativos: multi-
+        sucursal, multi-bodega, multi-caja, ciclo completo de compras, administración de
+        promociones y regalías, relaciones de producto y el ecosistema de reportes y
+        dashboard ejecutivo. Es la opción recomendada para cadenas, distribuidores y
+        negocios con operación madura que buscan una plataforma unificada sin módulos
+        por separado.
+      </p>
+      <p>
+        Todos los planes incluyen el núcleo POS probado en producción, seguridad por
+        usuarios, branding corporativo y actualizaciones de mantenimiento gratuitas
+        durante los primeros 6 meses según el nivel de soporte contratado. Para
+        cotizaciones personalizadas, migraciones o demostraciones en vivo, contacte al
+        equipo comercial de SAV.
+      </p>
+    </section>
+
+    <footer>
+      SAV — Sistema de Administración y Ventas · Propuesta comercial
+    </footer>
+  </div>
+</body>
+</html>
