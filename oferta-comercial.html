@@ -189,7 +189,7 @@
         <div class="brand-text">
           <h1>SAV</h1>
           <p>Propuesta Comercial — Paquetes y Módulos</p>
-          <div class="date">Fecha: 13/07/2026</div>
+          <div class="date">Fecha: 14/07/2026</div>
         </div>
       </div>
     </header>
@@ -240,7 +240,7 @@
         <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y consulta de estado de cuenta del cliente (Completo, Profesional, Comercio).</li>
         <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después sin perder el carrito (Completo, Profesional, Comercio).</li>
         <li><strong>Supervisor:</strong> autorización para abrir/cerrar turno, anular líneas y operaciones sensibles según permisos.</li>
-        <li><strong>Promociones y regalías:</strong> aplicación automática de descuentos y productos de regalo según reglas configuradas (Completo, Profesional, Comercio).</li>
+        <li><strong>Promociones y regalías:</strong> aplicación automática en caja de los cuatro tipos de campaña (precio fijo, porcentual, XtoX y XtoY) según hojas autorizadas (Completo y Profesional).</li>
         <li><strong>Productos relacionados, sustitutos y surtidos:</strong> sugerencias inteligentes en el POS para aumentar el ticket promedio (solo Completo).</li>
         <li><strong>Modo pantalla completa</strong> y colores corporativos personalizables en todos los planes.</li>
       </ul>
@@ -283,10 +283,45 @@
         <li>Catálogo de productos: código, descripción, categoría, marca, unidad de medida, precios y estado activo/inactivo.</li>
         <li>Variantes y códigos de barra: soporte para múltiples presentaciones y lectura en POS.</li>
         <li>Categorías y subcategorías: organización jerárquica para búsqueda y reportes.</li>
-        <li>Lista de precios: precios por lista, moneda o segmento de cliente.</li>
+        <li>Lista de precios: precios por lista y moneda.</li>
         <li>Productos surtidos, relacionados y sustitutos: definición de kits, complementos y alternativas de venta (solo Completo).</li>
-        <li>Promociones: reglas de descuento por producto, categoría, cantidad o período (Completo y Profesional).</li>
       </ul>
+
+      <h3>2.5.1 Promociones y regalías</h3>
+      <p>
+        Módulo de hojas de trabajo para configurar campañas comerciales con flujo de
+        autorización (borrador → en revisión → autorizado / anulado). Solo las promociones
+        <strong>autorizadas</strong> y vigentes se aplican en el POS. Disponible en
+        <strong>Completo</strong> y <strong>Profesional</strong>.
+      </p>
+      <p>Tipos de promoción soportados:</p>
+      <ul>
+        <li><strong>Descuento a precio fijo:</strong> define un precio promocional por producto durante el período de la campaña (ideal para liquidaciones o precio especial de temporada).</li>
+        <li><strong>Descuento porcentual:</strong> aplica un % de rebaja sobre el precio base, agrupable por nivel de descuento en la misma hoja.</li>
+        <li><strong>Regalía XtoX:</strong> compre X unidades de un producto y reciba Y unidades adicionales del <em>mismo</em> producto sin costo (ej. 2×1, 3×2). Escala automáticamente según la cantidad vendida.</li>
+        <li><strong>Regalía XtoY:</strong> compre X unidades de un producto y reciba Y unidades de <em>otro</em> producto (regalo cruzado), útil para combos y muestra de catálogo.</li>
+      </ul>
+      <p>
+        El alcance de cada promoción puede limitarse por <strong>sucursal</strong> y/o por
+        <strong>segmento de cliente</strong> (cuando el plan incluye segmentos), de modo que
+        la misma campaña no se aplique de forma indiscriminada a todo el público.
+      </p>
+
+      <h3>2.5.2 Segmentos de cliente</h3>
+      <p>
+        Catálogo que clasifica a la clientela en grupos comerciales (por ejemplo: mostrador,
+        mayoreo, afiliados o institucional). Su propósito es:
+      </p>
+      <ul>
+        <li>Dirigir promociones y condiciones solo al público correcto, evitando que un descuento de mayoreo se aplique a un cliente ocasional.</li>
+        <li>Facilitar listas de precio y políticas comerciales diferenciadas por tipo de comprador.</li>
+        <li>Analizar ventas y comportamiento por segmento en reportes y seguimiento comercial.</li>
+      </ul>
+      <p>
+        Disponible únicamente en las licencias más altas: <strong>Completo</strong> y
+        <strong>Profesional</strong>. En Comercio y Estándar el sistema opera sin segmentación
+        (todos los clientes se tratan bajo la misma política general).
+      </p>
 
       <h3>2.6 Almacén e Inventario</h3>
       <p>
@@ -317,9 +352,11 @@
         Datos maestros compartidos por todos los módulos del sistema.
       </p>
       <ul>
-        <li>Tiendas y sucursales: estructura organizacional del negocio.</li>
+        <li>Tiendas y sucursales: estructura organizacional del negocio, con región y ciudad opcionales.</li>
+        <li>Regiones y ciudades: primera división territorial (departamento o provincia según el país) y localidades asociadas.</li>
         <li>Marcas, modelos, monedas y unidades de medida.</li>
-        <li>Clientes: registro de personas y empresas con datos de contacto y crédito.</li>
+        <li>Clientes: registro de personas y empresas con datos de contacto, crédito y, en planes altos, asignación a un segmento.</li>
+        <li><strong>Segmentos de cliente:</strong> administración del catálogo de segmentos (solo Completo y Profesional; ver §2.5.2).</li>
         <li><strong>En Estándar:</strong> catálogos de conceptos de caja precargados sin opción de crear ni editar registros.</li>
       </ul>
 
@@ -375,7 +412,9 @@
             <tr><td>POS — venta contado</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>POS — crédito y abonos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>POS — facturas en espera</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
-            <tr><td>POS — promociones y regalías</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>POS — promociones y regalías</td><td>Sí (4 tipos)</td><td>Sí (4 tipos)</td><td>No</td><td>No</td></tr>
+            <tr><td>Admin hojas de promoción (autorización)</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Segmentos de cliente</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>POS — productos relacionados/sustitutos</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>Apertura/cierre con billeteo</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Solo totales manuales</td></tr>
             <tr><td>Caja chica y movimientos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
@@ -456,10 +495,11 @@
       <p>
         El plan Completo a USD 1,000 representa la solución sin límites operativos: multi-
         sucursal, multi-bodega, multi-caja, ciclo completo de compras, administración de
-        promociones y regalías, relaciones de producto y el ecosistema de reportes y
-        dashboard ejecutivo. Es la opción recomendada para cadenas, distribuidores y
-        negocios con operación madura que buscan una plataforma unificada sin módulos
-        por separado.
+        promociones (precio fijo, porcentual y regalías XtoX / XtoY) con autorización,
+        segmentos de cliente para campañas dirigidas, relaciones de producto y el ecosistema
+        de reportes y dashboard ejecutivo. Es la opción recomendada para cadenas,
+        distribuidores y negocios con operación madura que buscan una plataforma unificada
+        sin módulos por separado.
       </p>
       <p>
         Todos los planes incluyen el núcleo POS probado en producción, seguridad por
