@@ -189,7 +189,7 @@
         <div class="brand-text">
           <h1>SAV</h1>
           <p>Propuesta Comercial — Paquetes y Módulos</p>
-          <div class="date">Fecha: 14/07/2026</div>
+          <div class="date">Fecha: 16/07/2026</div>
         </div>
       </div>
     </header>
@@ -201,16 +201,21 @@
         para negocios que requieren control de punto de venta, caja, inventario, compras y
         reportes en un solo ecosistema. La solución combina una interfaz moderna de
         POS táctil, administración de turnos de caja con arqueo detallado, seguridad por
-        roles y permisos, y un panel ejecutivo para la toma de decisiones.
+        roles y permisos, un panel ejecutivo para la toma de decisiones y la
+        <strong>app móvil SAV Escáner</strong>, que extiende la operación al piso de venta:
+        consulta de productos, escaneo hacia la caja y supervisión de turnos en tiempo real.
       </p>
       <p>
         Esta propuesta presenta cuatro niveles de licenciamiento — Completo,
         Profesional, Comercio y Estándar — que permiten adaptar la inversión al tamaño y
-        madurez operativa de cada cliente. El paquete Completo (Precio A definir) incluye acceso a todos los beneficios que provee el sistema.
+        madurez operativa de cada cliente. El paquete Completo (USD 1,000) incluye acceso a todos los beneficios que provee el sistema.
       </p>
       <p>
         Cada módulo descrito a continuación detalla su función operativa, el valor que
-        aporta al negocio y la disponibilidad según el plan contratado.
+        aporta al negocio y la disponibilidad según el plan contratado. Se incorporan
+        las capacidades más recientes: descuentos autorizados por línea o factura,
+        panel de crédito del cliente, multiprecio, detalle de producto con visor de
+        imágenes, marca corporativa (incluido fondo de login) y la app móvil.
       </p>
     </section>
 
@@ -231,18 +236,22 @@
 
       <h3>2.2 Punto de Venta (POS)</h3>
       <p>
-        Módulo principal de facturación en mostrador. Interfaz optimizada pantalla táctil,
+        Módulo principal de facturación en mostrador. Interfaz optimizada para pantalla táctil,
         con búsqueda rápida de productos, carrito de compras, múltiples formas de pago
-        (efectivo, tarjeta, mixto) y soporte para monedas NIO y USD.
+        (efectivo, tarjeta, mixto) y soporte para moneda local y USD con tasa de cambio.
       </p>
       <ul>
         <li><strong>Ventas al contado:</strong> registro de líneas, cantidades, precios y totales con impresión de ticket.</li>
-        <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y consulta de estado de cuenta del cliente (Completo, Profesional, Comercio).</li>
-        <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después sin perder el carrito (Completo, Profesional, Comercio).</li>
-        <li><strong>Supervisor:</strong> autorización para abrir/cerrar turno, anular líneas y operaciones sensibles según permisos.</li>
+        <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y cobro de facturas pendientes desde el POS (Completo, Profesional, Comercio).</li>
+        <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después —incluso desde otra terminal— sin perder el carrito (Completo, Profesional, Comercio).</li>
+        <li><strong>Multiprecio:</strong> selección de lista de precio por producto (mostrador, mayoreo, campaña, etc.) directamente en la tarjeta del catálogo.</li>
+        <li><strong>Descuentos manuales con autorización:</strong> reglas configurables (% o monto fijo) aplicables por <em>línea</em>, por <em>factura</em> o ambos; cada aplicación genera ticket de autorización de supervisor con permiso dedicado y queda auditada.</li>
+        <li><strong>Supervisor:</strong> autorización para abrir/cerrar turno, anular líneas, vaciar carrito, descuentos y demás operaciones sensibles según permisos.</li>
         <li><strong>Promociones y regalías:</strong> aplicación automática en caja de los cuatro tipos de campaña (precio fijo, porcentual, XtoX y XtoY) según hojas autorizadas (Completo y Profesional).</li>
+        <li><strong>Detalle de producto:</strong> ficha con stock, precios, promociones vigentes e imagen principal; botón «Ver imagen» con visor ampliado y soporte preparado para múltiples fotografías (una marcada como principal).</li>
         <li><strong>Productos relacionados, sustitutos y surtidos:</strong> sugerencias inteligentes en el POS para aumentar el ticket promedio (solo Completo).</li>
-        <li><strong>Modo pantalla completa</strong> y colores corporativos personalizables en todos los planes.</li>
+        <li><strong>Escáner móvil → carrito:</strong> recepción en tiempo real de códigos enviados desde la app SAV Escáner a la caja abierta.</li>
+        <li><strong>Modo pantalla completa</strong> y branding corporativo (colores y logo) personalizables en todos los planes.</li>
       </ul>
 
       <h3>2.3 Operaciones de Caja</h3>
@@ -252,11 +261,11 @@
       </p>
       <ul>
         <li><strong>Apertura y cierre de turno:</strong> registro de fondo inicial y arqueo final. En planes superiores incluye billeteo por denominación; en Estándar solo totales manuales.</li>
-        <li><strong>Caja chica:</strong> registro de entradas y salidas de efectivo durante el turno (gastos menores, retiros, depósitos) con conceptos configurables.</li>
+        <li><strong>Movimientos de caja:</strong> fondos separados de caja de turno (afecta arqueo POS) y caja chica (saldo persistente por registradora), con transferencias entre ambos y conceptos configurables.</li>
         <li><strong>Historial de turnos:</strong> consulta de turnos cerrados con detalle de billeteo, diferencias, autorizaciones de supervisor y totales por forma de pago.</li>
         <li><strong>Cajas registradoras:</strong> alta y configuración de puntos de venta físicos vinculados a sucursal y bodega.</li>
         <li><strong>Terminales POS:</strong> registro de dispositivos de cobro con tarjeta asociados a cada caja.</li>
-        <li><strong>Conceptos de movimiento:</strong> catálogo de motivos para entradas/salidas de caja chica (CRUD en planes superiores; solo lectura en Estándar).</li>
+        <li><strong>Conceptos de movimiento:</strong> catálogo de motivos para entradas/salidas de caja de turno y caja chica (CRUD en planes superiores; solo lectura en Estándar).</li>
         <li><strong>Conceptos de diferencia:</strong> catálogo para clasificar faltantes o sobrantes en el arqueo (CRUD en planes superiores; solo lectura en Estándar).</li>
         <li><strong>Configuración POS:</strong> parámetros operativos como billeteo obligatorio u opcional, comportamiento de impresión y opciones de interfaz.</li>
       </ul>
@@ -268,6 +277,7 @@
       <ul>
         <li>Listado de facturas emitidas con filtros por fecha, cliente y estado.</li>
         <li>Detalle de factura: líneas, pagos aplicados, usuario y caja que la generó.</li>
+        <li><strong>Panel de crédito del cliente:</strong> vista consolidada con score de pago, aging de saldos (0–30 / 31–60 / 61–90 / +90 días), mix contado vs crédito, facturas pendientes y historial de abonos — acceso rápido desde clientes o facturas con saldo (Completo, Profesional, Comercio).</li>
         <li><strong>Anulaciones:</strong> cancelación controlada de una factura completa con impacto en inventario y caja (Completo y Profesional).</li>
         <li><strong>Devolución total:</strong> reversión de todos los ítems pendientes de una venta (Completo, Profesional y Comercio).</li>
         <li><strong>Devolución parcial por ítems:</strong> selección de productos y cantidades a devolver, con historial acumulado hasta completar el documento (solo Completo y Profesional).</li>
@@ -281,9 +291,10 @@
       </p>
       <ul>
         <li>Catálogo de productos: código, descripción, categoría, marca, unidad de medida, precios y estado activo/inactivo.</li>
-        <li>Variantes y códigos de barra: soporte para múltiples presentaciones y lectura en POS.</li>
+        <li>Variantes, propiedades y códigos de barra: múltiples presentaciones y lectura en POS / app móvil.</li>
         <li>Categorías y subcategorías: organización jerárquica para búsqueda y reportes.</li>
-        <li>Lista de precios: precios por lista y moneda.</li>
+        <li>Tipos / listas de precio: precios por lista y moneda, seleccionables en el POS (multiprecio).</li>
+        <li>Imagen del producto (principal) visible en el detalle del POS, con visor ampliado; arquitectura preparada para galería multi-imagen.</li>
         <li>Productos surtidos, relacionados y sustitutos: definición de kits, complementos y alternativas de venta (solo Completo).</li>
       </ul>
 
@@ -329,8 +340,9 @@
       </p>
       <ul>
         <li>Bodegas: definición de ubicaciones de almacenamiento vinculadas a sucursales.</li>
-        <li>Ajustes de inventario: corrección manual de existencias por conteo físico o merma (disponible en todos los planes).</li>
-        <li>Entradas y recepciones: ingreso de mercadería contra orden de compra o documento de proveedor (Completo y Profesional).</li>
+        <li>Ajustes de inventario: correcciones manuales e ingresos/salidas de stock (conteo, merma, entrada libre, salida). Disponible en todos los planes.</li>
+        <li>Movimiento entre bodegas: traslado de existencias entre ubicaciones (Completo y Profesional).</li>
+        <li>Recepciones: ingreso de mercadería contra orden de compra o documento de proveedor (Completo y Profesional).</li>
         <li>Consulta de productos: saldos actuales, mínimos y kardex de movimientos.</li>
         <li><strong>Estándar:</strong> solo ajuste manual. Las compras se realizan fuera del sistema; el usuario ingresa el stock recibido mediante ajuste positivo.</li>
       </ul>
@@ -374,14 +386,35 @@
 
       <h3>2.10 Seguridad y Administración</h3>
       <p>
-        Control de acceso y configuración global del sistema.
+        Control de acceso, parámetros de negocio y configuración global del sistema.
       </p>
       <ul>
         <li>Usuarios: alta, bloqueo, asignación a sucursal y caja.</li>
-        <li>Roles y permisos: definición granular de qué menús y acciones puede ejecutar cada perfil.</li>
-        <li>Parámetros del sistema: vigencia de licencia, datos de empresa, branding y configuración general.</li>
+        <li>Roles y permisos: definición granular de qué menús y acciones puede ejecutar cada perfil (incluido permiso de aplicar descuentos en POS).</li>
+        <li><strong>Parámetros del sistema:</strong> moneda local, tasa de cambio, umbrales y demás configuración operativa de la compañía.</li>
+        <li><strong>Reglas de descuento (POS):</strong> activar/desactivar descuentos manuales; tipo (% / monto / ambos); modo por factura, por línea o ambos; base imponible; si aplica sobre promociones o sobre precios de lista distintos al base.</li>
+        <li><strong>Marca y estilo:</strong> logo, nombres comerciales, colores corporativos aplicados al sistema/POS y <em>fondo personalizado de la pantalla de login</em>.</li>
+        <li><strong>Dispositivos móviles:</strong> registro y vinculación de teléfonos/tablets (DeviceId) a usuario y caja, con privilegios (incl. FullAdmin multi-caja) para la app SAV Escáner.</li>
         <li><strong>Estándar:</strong> un administrador y hasta dos cajeros; sin creación de roles personalizados.</li>
       </ul>
+
+      <h3>2.11 App móvil SAV Escáner</h3>
+      <p>
+        Aplicación móvil (.NET MAUI) que convierte el teléfono o tablet del personal en
+        una herramienta de piso de venta conectada al mismo backend que el POS web.
+        Los dispositivos se administran desde Seguridad → Dispositivos.
+      </p>
+      <ul>
+        <li><strong>Escáner de productos:</strong> la cámara lee códigos de barra/QR y envía el código en tiempo real a la caja destino; el POS agrega el artículo al carrito como una pistola de código de barras.</li>
+        <li><strong>Consulta de producto:</strong> modo lookup para ver existencia, precio base, listas de precio, promociones y regalías vigentes sin interrumpir la venta en mostrador.</li>
+        <li><strong>Panel de caja en vivo:</strong> estado del turno (abierto/cerrado), saldos, flujo del turno, gastos, pagos y picos de venta — ideal para supervisión desde el piso o la gerencia.</li>
+        <li><strong>Selección de caja:</strong> dispositivo vinculado a una registradora, o FullAdmin con cambio de caja para monitorear varias estaciones.</li>
+        <li><strong>Alta segura:</strong> solicitud de vinculación del DeviceId al servidor; solo dispositivos autorizados operan contra la API.</li>
+      </ul>
+      <p class="note">
+        La app se ofrece como complemento operativo del ecosistema SAV (no sustituye el POS
+        de facturación). Requiere licencia SAV activa, API accesible en red y dispositivos registrados.
+      </p>
     </section>
 
     <section id="planes">
@@ -400,10 +433,10 @@
           <tbody>
             <tr>
               <td>Precio licencia (USD)</td>
-              <td class="price">A definir</td>
-              <td class="price">A definir</td>
-              <td class="price">A definir</td>
-              <td class="price">A definir</td>
+              <td class="price">$1,000</td>
+              <td class="price">$700</td>
+              <td class="price">$450</td>
+              <td class="price">$300</td>
             </tr>
             <tr><td>Usuarios incluidos</td><td>Ilimitados</td><td>15</td><td>8</td><td>3</td></tr>
             <tr><td>Sucursales</td><td>Ilimitadas</td><td>Hasta 5</td><td>Hasta 2</td><td>1</td></tr>
@@ -412,12 +445,16 @@
             <tr><td>POS — venta contado</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>POS — crédito y abonos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>POS — facturas en espera</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>POS — multiprecio / listas</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>POS — descuentos autorizados (línea / factura)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí*</td></tr>
+            <tr><td>POS — detalle producto + visor de imagen</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>POS — promociones y regalías</td><td>Sí (4 tipos)</td><td>Sí (4 tipos)</td><td>No</td><td>No</td></tr>
             <tr><td>Admin hojas de promoción (autorización)</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>Segmentos de cliente</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>POS — productos relacionados/sustitutos</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Panel de crédito del cliente</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Apertura/cierre con billeteo</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Solo totales manuales</td></tr>
-            <tr><td>Caja chica y movimientos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Movimientos de caja (turno / chica)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>Historial de turnos</td><td>Completo</td><td>Completo</td><td>90 días</td><td>30 días</td></tr>
             <tr><td>Compras / OC / recepción</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>Anulación de facturas</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
@@ -425,6 +462,9 @@
             <tr><td>Devolución parcial por ítems</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>Inventario — ajuste manual</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>Admin promociones y relaciones producto</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Reglas de descuento + Marca / login</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Dispositivos móviles (registro)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>App SAV Escáner (caja en vivo / consulta / pistola)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr>
               <td>Dashboard</td>
               <td>Ejecutivo completo</td>
@@ -451,7 +491,7 @@
           </tbody>
         </table>
       </div>
-      <p class="note">*CRUD = Creación, Lectura, Actualización y Eliminación de datos.</p>
+      <p class="note">*CRUD = Creación, Lectura, Actualización y Eliminación de datos. *Descuentos en Estándar sujetos a reglas y permisos configurados; requieren autorización de supervisor.</p>
     </section>
 
     <section id="servicios-incluidos">
@@ -478,7 +518,6 @@
             <tr><td>Soporte (Después del tiempo incluido)</td><td class="price">$15/hora</td></tr>
             <tr><td>Sucursal adicional</td><td class="price">$20 c/u</td></tr>
             <tr><td>Caja adicional</td><td class="price">$20 c/u</td></tr>
-            <tr><td>Usuario adicional</td><td class="price">$20 c/u</td></tr>
           </tbody>
         </table>
       </div>
@@ -488,24 +527,26 @@
       <h2>5. Conclusión</h2>
       <p>
         SAV ofrece una ruta de crecimiento clara: el cliente puede iniciar con el plan
-        Estándar (Precio A definir) para digitalizar ventas y control básico de inventario en un
+        Estándar (USD 300) para digitalizar ventas y control básico de inventario en un
         solo punto, y escalar a Comercio, Profesional o Completo conforme abra
         nuevas sucursales, requiera compras integradas o necesite promociones y
         reportes avanzados.
       </p>
       <p>
-        El plan Completo a USD (Precio A definir) representa la solución sin límites operativos: multi-
+        El plan Completo a USD 1,000 representa la solución sin límites operativos: multi-
         sucursal, multi-bodega, multi-caja, ciclo completo de compras, administración de
         promociones (precio fijo, porcentual y regalías XtoX / XtoY) con autorización,
-        segmentos de cliente para campañas dirigidas, relaciones de producto y el ecosistema
+        segmentos de cliente para campañas dirigidas, relaciones de producto, panel de
+        crédito con aging, descuentos auditados, marca corporativa y el ecosistema
         de reportes y dashboard ejecutivo. Es la opción recomendada para cadenas,
         distribuidores y negocios con operación madura que buscan una plataforma unificada
         sin módulos por separado.
       </p>
       <p>
         Todos los planes incluyen el núcleo POS probado en producción, seguridad por
-        usuarios, branding corporativo y actualizaciones de mantenimiento gratuitas
-        durante los primeros 6 meses según el nivel de soporte contratado. Para
+        usuarios, branding corporativo, la app móvil SAV Escáner (consulta, pistola de
+        códigos hacia la caja y panel de turno en vivo) y actualizaciones de mantenimiento
+        gratuitas durante los primeros meses según el nivel de soporte contratado. Para
         cotizaciones personalizadas, migraciones o demostraciones en vivo, contacte al
         equipo comercial de SAV.
       </p>
