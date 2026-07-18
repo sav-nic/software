@@ -149,7 +149,33 @@
     }
     .table-wrap tr:nth-child(even) td { background: #f8fafb; }
     .table-wrap td:first-child { font-weight: 600; color: var(--head); }
-    .price { color: var(--accent); font-weight: 700; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .feature-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 9px;
+      padding: 0.85rem 0.95rem;
+      background: #fbfbff;
+    }
+    .feature-card strong {
+      display: block;
+      color: var(--head);
+      margin-bottom: 0.25rem;
+    }
+    .feature-card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .table-wrap .group-row td {
+      background: var(--accent-soft) !important;
+      color: var(--head);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-size: 0.8rem;
+    }
     .included-list {
       list-style: none;
       padding: 0;
@@ -189,7 +215,7 @@
         <div class="brand-text">
           <h1>SAV</h1>
           <p>Propuesta Comercial — Paquetes y Módulos</p>
-          <div class="date">Fecha: 16/07/2026</div>
+          <div class="date">Fecha: 18/07/2026</div>
         </div>
       </div>
     </header>
@@ -206,55 +232,96 @@
         consulta de productos, escaneo hacia la caja y supervisión de turnos en tiempo real.
       </p>
       <p>
-        Esta propuesta presenta cuatro niveles de licenciamiento — Completo,
-        Profesional, Comercio y Estándar — que permiten adaptar la inversión al tamaño y
-        madurez operativa de cada cliente. El paquete Completo (USD XXX) incluye acceso a todos los beneficios que provee el sistema.
+        Esta propuesta presenta cuatro niveles de licenciamiento — Completa,
+        Profesional, Comercio y Estándar — que permiten adaptar la solución al tamaño,
+        número de ubicaciones y madurez operativa de cada cliente. Las condiciones
+        comerciales y precios se definirán de forma independiente según el alcance contratado.
       </p>
       <p>
         Cada módulo descrito a continuación detalla su función operativa, el valor que
         aporta al negocio y la disponibilidad según el plan contratado. Se incorporan
-        las capacidades más recientes: descuentos autorizados por línea o factura,
-        panel de crédito del cliente, multiprecio, detalle de producto con visor de
-        imágenes, marca corporativa (incluido fondo de login) y la app móvil.
+        las capacidades más recientes: KITs o packs virtuales, política configurable para
+        vender con o sin existencias, cotizaciones de venta, descuentos autorizados por
+        línea o factura, promociones y regalías, control de gastos y bancos, carga masiva
+        de productos, panel de crédito, multiprecio, marca corporativa y la app móvil.
       </p>
     </section>
 
-    <section id="modulos">
-      <h2>2. Descripción de Módulos</h2>
+    <section id="novedades">
+      <h2>2. Capacidades Destacadas Incorporadas</h2>
+      <p>
+        Las siguientes mejoras amplían el alcance comercial y operativo de SAV. Su
+        distribución propuesta por plan se detalla en la tabla comparativa.
+      </p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <strong>KITs, packs y combos virtuales</strong>
+          <p>Composición por productos simples, costo y margen calculados, disponibilidad armable y consumo trazable de componentes.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Política de venta sin existencias</strong>
+          <p>La empresa decide si permite stock negativo o si exige disponibilidad antes de abrir el cobro, incluyendo todos los componentes de un KIT.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Reglas de descuento auditadas</strong>
+          <p>Descuentos porcentuales o fijos, por línea o factura, con reglas de acumulación y autorización segura de supervisor.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Cotizaciones de venta</strong>
+          <p>Creación desde el carrito, impresión, consulta, vigencia, anulación, recuperación en POS y conversión controlada a factura.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Gastos, bancos y caja chica</strong>
+          <p>Egresos por sucursal y origen, beneficiarios, cuentas bancarias, transferencias, tarjetas, anulación y afectación opcional de saldos.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Catálogo e importación mejorados</strong>
+          <p>Variantes, propiedades, múltiples códigos, imágenes, vencimientos, búsqueda sin sensibilidad a acentos y plantillas Excel.</p>
+        </div>
+      </div>
+    </section>
 
-      <h3>2.1 Dashboard Ejecutivo</h3>
+    <section id="modulos">
+      <h2>3. Descripción de Módulos</h2>
+
+      <h3>3.1 Dashboard Ejecutivo</h3>
       <p>
         Panel de control centralizado que consolida indicadores clave de ventas,
-        inventario y operación de caja. Permite filtrar por sucursal y rango de fechas para
-        monitorear el desempeño del negocio en tiempo casi real.
+        inventario, gastos y operación de caja. Permite filtrar por sucursal y rango de
+        fechas para monitorear el desempeño del negocio en tiempo casi real.
       </p>
       <ul>
-        <li><strong>Completo / Profesional:</strong> KPIs de ventas del día y del mes, productos más vendidos, alertas de stock bajo, estado de cajas abiertas, gráficos comparativos y acceso rápido a reportes.</li>
-        <li><strong>Comercio:</strong> Cuatro tarjetas principales (ventas del día, ventas del mes, unidades vendidas, alertas de inventario) más acceso a reportes básicos.</li>
+        <li><strong>Completa / Profesional:</strong> KPIs de ventas del día y del mes, productos más vendidos, alertas de stock, estado de cajas, gastos, caja chica, gráficos comparativos y acceso rápido a reportes.</li>
+        <li><strong>Comercio:</strong> cuatro tarjetas principales (ventas del día, ventas del mes, unidades vendidas y alertas de inventario), más consultas operativas.</li>
         <li><strong>Estándar:</strong> Dashboard básico con 4 tarjetas fijas y dos reportes de consulta (ventas por período y existencias actuales). Sin filtros multi-sucursal.</li>
       </ul>
 
-      <h3>2.2 Punto de Venta (POS)</h3>
+      <h3>3.2 Punto de Venta (POS)</h3>
       <p>
         Módulo principal de facturación en mostrador. Interfaz optimizada para pantalla táctil,
         con búsqueda rápida de productos, carrito de compras, múltiples formas de pago
-        (efectivo, tarjeta, mixto) y soporte para moneda local y USD con tasa de cambio.
+        (efectivo, tarjeta, transferencia, cheque y pagos mixtos) y soporte para moneda
+        local y USD con tasa de cambio.
       </p>
       <ul>
         <li><strong>Ventas al contado:</strong> registro de líneas, cantidades, precios y totales con impresión de ticket.</li>
-        <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y cobro de facturas pendientes desde el POS (Completo, Profesional, Comercio).</li>
-        <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después —incluso desde otra terminal— sin perder el carrito (Completo, Profesional, Comercio).</li>
+        <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y cobro de facturas pendientes desde el POS (Completa, Profesional, Comercio).</li>
+        <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después —incluso desde otra terminal— sin perder el carrito (Completa, Profesional, Comercio).</li>
+        <li><strong>Cotizaciones:</strong> generar una propuesta desde el carrito, imprimirla, localizarla por cliente/fecha/estado y cargarla posteriormente para convertirla en factura (Completa, Profesional, Comercio).</li>
         <li><strong>Multiprecio:</strong> selección de lista de precio por producto (mostrador, mayoreo, campaña, etc.) directamente en la tarjeta del catálogo.</li>
         <li><strong>Descuentos manuales con autorización:</strong> reglas configurables (% o monto fijo) aplicables por <em>línea</em>, por <em>factura</em> o ambos; cada aplicación genera ticket de autorización de supervisor con permiso dedicado y queda auditada.</li>
         <li><strong>Supervisor:</strong> autorización para abrir/cerrar turno, anular líneas, vaciar carrito, descuentos y demás operaciones sensibles según permisos.</li>
-        <li><strong>Promociones y regalías:</strong> aplicación automática en caja de los cuatro tipos de campaña (precio fijo, porcentual, XtoX y XtoY) según hojas autorizadas (Completo y Profesional).</li>
-        <li><strong>Detalle de producto:</strong> ficha con stock, precios, promociones vigentes e imagen principal; botón «Ver imagen» con visor ampliado y soporte preparado para múltiples fotografías (una marcada como principal).</li>
-        <li><strong>Productos relacionados, sustitutos y surtidos:</strong> sugerencias inteligentes en el POS para aumentar el ticket promedio (solo Completo).</li>
+        <li><strong>Promociones y regalías:</strong> aplicación automática en caja de precio fijo, descuento porcentual, XtoX y XtoY según hojas autorizadas y vigencia (Completa, Profesional y Comercio).</li>
+        <li><strong>KITs y packs:</strong> venta como un solo artículo comercial mientras el sistema valida y descuenta atómicamente cada componente, conservando costo histórico y trazabilidad para devoluciones.</li>
+        <li><strong>Control configurable de existencias:</strong> la empresa puede permitir facturación con stock negativo o exigir disponibilidad suficiente. Cuando se exige, el botón «Cobrar» valida antes de mostrar el pago y la venta vuelve a comprobar el stock al registrarse.</li>
+        <li><strong>Búsqueda tolerante a acentos:</strong> encuentra nombre, SKU y códigos aunque el usuario escriba sin tildes, por ejemplo «azucar» para «azúcar».</li>
+        <li><strong>Detalle de producto:</strong> ficha con stock, precios, promociones e imágenes disponible desde el resultado de búsqueda y desde cada línea del detalle del carrito.</li>
+        <li><strong>Productos relacionados, sustitutos y surtidos:</strong> sugerencias configuradas por el negocio para aumentar el ticket promedio (Completa y Profesional).</li>
         <li><strong>Escáner móvil → carrito:</strong> recepción en tiempo real de códigos enviados desde la app SAV Escáner a la caja abierta.</li>
         <li><strong>Modo pantalla completa</strong> y branding corporativo (colores y logo) personalizables en todos los planes.</li>
       </ul>
 
-      <h3>2.3 Operaciones de Caja</h3>
+      <h3>3.3 Operaciones de Caja</h3>
       <p>
         Conjunto de herramientas para administrar el ciclo de vida de la caja registradora:
         apertura, operación diaria, movimientos internos y cierre con arqueo.
@@ -270,40 +337,60 @@
         <li><strong>Configuración POS:</strong> parámetros operativos como billeteo obligatorio u opcional, comportamiento de impresión y opciones de interfaz.</li>
       </ul>
 
-      <h3>2.4 Facturación y Devoluciones</h3>
+      <h3>3.4 Gastos, Beneficiarios y Bancos</h3>
+      <p>
+        Registro y seguimiento de egresos operativos por sucursal, conectado con caja,
+        caja chica y cuentas bancarias según la forma de pago seleccionada.
+      </p>
+      <ul>
+        <li><strong>Gastos:</strong> fecha, tipo, documento, moneda, beneficiario, origen de fondos, observaciones y estado registrado/anulado.</li>
+        <li><strong>Orígenes de pago:</strong> caja de turno, caja chica, transferencia bancaria, tarjeta u otros medios configurados.</li>
+        <li><strong>Beneficiarios:</strong> catálogo reutilizable con datos fiscales, contacto, cuentas bancarias y opción de nombre manual para casos ocasionales.</li>
+        <li><strong>Bancos y cuentas:</strong> cuentas por moneda, alias, saldo actual y bitácora de ajustes; selección directa al registrar transferencias.</li>
+        <li><strong>Afectación configurable:</strong> los gastos y movimientos bancarios pueden actualizar saldos de cuenta automáticamente y revertirlos al anular.</li>
+        <li><strong>Trazabilidad:</strong> filtros por fecha, sucursal, tipo, estado y beneficiario, con detalle del movimiento de caja o referencia bancaria asociada.</li>
+      </ul>
+
+      <h3>3.5 Facturación, Cotizaciones y Devoluciones</h3>
       <p>
         Módulo de consulta y gestión de documentos de venta fuera del POS en tiempo real.
       </p>
       <ul>
         <li>Listado de facturas emitidas con filtros por fecha, cliente y estado.</li>
         <li>Detalle de factura: líneas, pagos aplicados, usuario y caja que la generó.</li>
-        <li><strong>Panel de crédito del cliente:</strong> vista consolidada con score de pago, aging de saldos (0–30 / 31–60 / 61–90 / +90 días), mix contado vs crédito, facturas pendientes y historial de abonos — acceso rápido desde clientes o facturas con saldo (Completo, Profesional, Comercio).</li>
-        <li><strong>Anulaciones:</strong> cancelación controlada de una factura completa con impacto en inventario y caja (Completo y Profesional).</li>
-        <li><strong>Devolución total:</strong> reversión de todos los ítems pendientes de una venta (Completo, Profesional y Comercio).</li>
-        <li><strong>Devolución parcial por ítems:</strong> selección de productos y cantidades a devolver, con historial acumulado hasta completar el documento (solo Completo y Profesional).</li>
+        <li><strong>Cotizaciones de venta:</strong> listado por vigencia y estado, consulta detallada, impresión, anulación, reapertura en POS y marcación automática como convertida al facturar (Completa, Profesional y Comercio).</li>
+        <li><strong>Panel de crédito del cliente:</strong> vista consolidada con score de pago, aging de saldos (0–30 / 31–60 / 61–90 / +90 días), mix contado vs crédito, facturas pendientes y historial de abonos — acceso rápido desde clientes o facturas con saldo (Completa, Profesional, Comercio).</li>
+        <li><strong>Anulaciones:</strong> cancelación controlada de una factura completa con impacto en inventario y caja (Completa y Profesional).</li>
+        <li><strong>Devolución total:</strong> reversión de todos los ítems pendientes de una venta (Completa, Profesional y Comercio).</li>
+        <li><strong>Devolución parcial por ítems:</strong> selección de productos y cantidades, incluyendo restitución de componentes históricos de KITs, con historial acumulado hasta completar el documento (Completa y Profesional).</li>
         <li><strong>Estándar:</strong> consulta de facturas disponible; no permite anular ni devolver.</li>
-        <li>Reporte de abonos: seguimiento de pagos a crédito y saldos pendientes (Completo, Profesional y Comercio).</li>
+        <li>Seguimiento de abonos y saldos pendientes por cliente y factura (Completa, Profesional y Comercio).</li>
       </ul>
 
-      <h3>2.5 Productos y Catálogo</h3>
+      <h3>3.6 Productos, Variantes y KITs</h3>
       <p>
         Administración del maestro de artículos que alimenta el POS y los reportes de inventario.
       </p>
       <ul>
-        <li>Catálogo de productos: código, descripción, categoría, marca, unidad de medida, precios y estado activo/inactivo.</li>
-        <li>Variantes, propiedades y códigos de barra: múltiples presentaciones y lectura en POS / app móvil.</li>
+        <li>Catálogo de productos: código, descripción, categoría, marca/modelo, proveedor, unidad, impuestos, vencimiento, control de stock, precios y estado.</li>
+        <li>Variantes y propiedades configurables: talla, color, presentación u otros atributos definidos por el negocio.</li>
+        <li>Múltiples códigos de barra por variante, con búsqueda y lectura desde POS y app móvil.</li>
         <li>Categorías y subcategorías: organización jerárquica para búsqueda y reportes.</li>
         <li>Tipos / listas de precio: precios por lista y moneda, seleccionables en el POS (multiprecio).</li>
-        <li>Imagen del producto (principal) visible en el detalle del POS, con visor ampliado; arquitectura preparada para galería multi-imagen.</li>
-        <li>Productos surtidos, relacionados y sustitutos: definición de kits, complementos y alternativas de venta (solo Completo).</li>
+        <li>Galería de imágenes con imagen principal, detalle y visor ampliado.</li>
+        <li><strong>Importación masiva:</strong> plantilla Excel con catálogos válidos y carga Create/Update de hasta 500 productos por archivo.</li>
+        <li><strong>KITs / packs / combos virtuales:</strong> catálogo dedicado, variante comercial única y composición por productos simples con cantidad requerida.</li>
+        <li><strong>Rentabilidad de KIT:</strong> costo derivado, ganancia estimada y margen sobre venta antes de guardar.</li>
+        <li><strong>Inventario virtual:</strong> el KIT no mantiene stock propio; su disponibilidad armable se calcula por bodega usando el componente limitante.</li>
+        <li><strong>Relaciones comerciales:</strong> productos complementarios, sustitutos y surtidos para sugerencias en POS (Completa y Profesional).</li>
       </ul>
 
-      <h3>2.5.1 Promociones y regalías</h3>
+      <h3>3.7 Promociones, Regalías y Reglas de Descuento</h3>
       <p>
         Módulo de hojas de trabajo para configurar campañas comerciales con flujo de
         autorización (borrador → en revisión → autorizado / anulado). Solo las promociones
         <strong>autorizadas</strong> y vigentes se aplican en el POS. Disponible en
-        <strong>Completo</strong> y <strong>Profesional</strong>.
+        <strong>Completa</strong>, <strong>Profesional</strong> y <strong>Comercio</strong>.
       </p>
       <p>Tipos de promoción soportados:</p>
       <ul>
@@ -317,8 +404,16 @@
         <strong>segmento de cliente</strong> (cuando el plan incluye segmentos), de modo que
         la misma campaña no se aplique de forma indiscriminada a todo el público.
       </p>
+      <p><strong>Reglas para descuentos manuales:</strong></p>
+      <ul>
+        <li>Activación global de descuentos en caja y permiso específico para autorizar.</li>
+        <li>Tipo porcentual, monto fijo o ambos; aplicación por línea, por factura o combinada.</li>
+        <li>Base sobre subtotal, total con impuesto o tratamiento exento/especial.</li>
+        <li>Control para impedir o permitir acumulación sobre promociones, regalías o precios distintos al precio base.</li>
+        <li>Ticket de autorización de un solo uso, usuario autorizador y auditoría de la operación.</li>
+      </ul>
 
-      <h3>2.5.2 Segmentos de cliente</h3>
+      <h3>3.8 Segmentos de Cliente</h3>
       <p>
         Catálogo que clasifica a la clientela en grupos comerciales (por ejemplo: mostrador,
         mayoreo, afiliados o institucional). Su propósito es:
@@ -329,76 +424,89 @@
         <li>Analizar ventas y comportamiento por segmento en reportes y seguimiento comercial.</li>
       </ul>
       <p>
-        Disponible únicamente en las licencias más altas: <strong>Completo</strong> y
+        Disponible únicamente en las licencias más altas: <strong>Completa</strong> y
         <strong>Profesional</strong>. En Comercio y Estándar el sistema opera sin segmentación
         (todos los clientes se tratan bajo la misma política general).
       </p>
 
-      <h3>2.6 Almacén e Inventario</h3>
+      <h3>3.9 Almacén e Inventario</h3>
       <p>
         Control de existencias por bodega con trazabilidad de movimientos.
       </p>
       <ul>
         <li>Bodegas: definición de ubicaciones de almacenamiento vinculadas a sucursales.</li>
         <li>Ajustes de inventario: correcciones manuales e ingresos/salidas de stock (conteo, merma, entrada libre, salida). Disponible en todos los planes.</li>
-        <li>Movimiento entre bodegas: traslado de existencias entre ubicaciones (Completo y Profesional).</li>
-        <li>Recepciones: ingreso de mercadería contra orden de compra o documento de proveedor (Completo y Profesional).</li>
-        <li>Consulta de productos: saldos actuales, mínimos y kardex de movimientos.</li>
+        <li>Movimiento entre bodegas: traslado de existencias entre ubicaciones (Completa y Profesional).</li>
+        <li>Recepciones: ingreso de mercadería contra orden de compra o documento de proveedor (Completa y Profesional).</li>
+        <li>Consulta de productos: saldos actuales, mínimos, alertas y kardex de movimientos por sucursal/bodega.</li>
+        <li><strong>Disponibilidad armable de KITs:</strong> cálculo en tiempo real sin crear stock ficticio para el pack; ajustes y traslados se realizan sobre sus componentes.</li>
+        <li><strong>Consumo atómico:</strong> una venta de KIT descuenta todos sus componentes o rechaza la operación completa cuando la política exige stock suficiente.</li>
+        <li><strong>Trazabilidad y reversión:</strong> componentes, cantidades y costos históricos conservados para devoluciones y anulaciones consistentes.</li>
         <li><strong>Estándar:</strong> solo ajuste manual. Las compras se realizan fuera del sistema; el usuario ingresa el stock recibido mediante ajuste positivo.</li>
       </ul>
 
-      <h3>2.7 Compras</h3>
+      <h3>3.10 Compras</h3>
       <p>
         Ciclo de abastecimiento desde la cotización hasta la recepción en bodega.
       </p>
       <ul>
-        <li>Proveedores: registro de datos fiscales, contacto y condiciones.</li>
-        <li>Cotizaciones: comparación de ofertas de proveedores antes de generar la orden.</li>
-        <li>Órdenes de compra: documento formal con líneas, cantidades, costos y estado (borrador, aprobada, recibida).</li>
-        <li>Recepción: actualización automática de inventario al confirmar la llegada de mercadería.</li>
-        <li>Disponible en Completo y Profesional. No incluido en Comercio ni Estándar.</li>
+        <li>Proveedores: registro de datos fiscales, contacto, condiciones y cuentas bancarias.</li>
+        <li>Cotizaciones de proveedor: comparación de ofertas y conversión a orden de compra.</li>
+        <li>Órdenes de compra: líneas, cantidades, unidad, moneda, impuestos, otros costos, bodega destino y margen sugerido.</li>
+        <li>Flujo de autorización: borrador, pendiente, autorizada, recepción parcial/completa y anulación, con permiso de supervisor y umbral configurable de autoautorización.</li>
+        <li>Recepción: número de factura del proveedor, ingresos parciales y actualización automática de inventario y costos.</li>
+        <li>Términos de pago y métodos de envío como catálogos reutilizables.</li>
+        <li>Disponible en Completa y Profesional. No incluido en Comercio ni Estándar.</li>
       </ul>
 
-      <h3>2.8 Catálogos Generales</h3>
+      <h3>3.11 Catálogos Generales y Carga Inicial</h3>
       <p>
         Datos maestros compartidos por todos los módulos del sistema.
       </p>
       <ul>
         <li>Tiendas y sucursales: estructura organizacional del negocio, con región y ciudad opcionales.</li>
         <li>Regiones y ciudades: primera división territorial (departamento o provincia según el país) y localidades asociadas.</li>
-        <li>Marcas, modelos, monedas y unidades de medida.</li>
+        <li>Marcas, modelos, propiedades, monedas, impuestos y unidades de medida.</li>
         <li>Clientes: registro de personas y empresas con datos de contacto, crédito y, en planes altos, asignación a un segmento.</li>
-        <li><strong>Segmentos de cliente:</strong> administración del catálogo de segmentos (solo Completo y Profesional; ver §2.5.2).</li>
+        <li>Proveedores, beneficiarios, tipos de gasto, razones de ajuste, términos de pago y métodos de envío.</li>
+        <li>Bancos, cuentas por moneda, tipos de tarjeta y terminales POS.</li>
+        <li><strong>Segmentos de cliente:</strong> administración del catálogo de segmentos (solo Completa y Profesional; ver §3.8).</li>
+        <li><strong>Carga inicial asistida:</strong> plantilla Excel para categorías, subcategorías, marcas, modelos, proveedores, UOM, impuestos, tipos de precio y propiedades; importación masiva específica para productos.</li>
         <li><strong>En Estándar:</strong> catálogos de conceptos de caja precargados sin opción de crear ni editar registros.</li>
       </ul>
 
-      <h3>2.9 Reportes</h3>
+      <h3>3.12 Reportes y Auditoría</h3>
       <p>
         Motor de reportes con visor integrado y exportación para análisis gerencial.
       </p>
       <ul>
         <li>Ventas: por año, por período, por producto, por categoría, devoluciones y facturas anuladas.</li>
         <li>Inventario: existencias actuales, movimientos por producto y por categoría.</li>
-        <li>Caja: estado de turnos, diferencias de arqueo y abonos pendientes.</li>
-        <li><strong>Completo:</strong> acceso al visor de reportes y catálogo completo.</li>
+        <li>Caja y gastos: estado de turnos, diferencias de arqueo, fondos, caja chica, gastos y abonos pendientes.</li>
+        <li>Promociones: descuentos, promociones aplicadas, salidas por regalía y porcentaje de ventas con descuento.</li>
+        <li>Auditoría operativa: autorizaciones, usuario, caja, sucursal y trazabilidad de documentos.</li>
+        <li><strong>Completa:</strong> acceso al visor de reportes y catálogo completo.</li>
+        <li><strong>Exportación y presentación:</strong> Excel, CSV, PDF, impresión, configuración de columnas, formatos y reglas visuales según reporte.</li>
         <li><strong>Estándar:</strong> dos reportes fijos (ventas por período y existencias).</li>
       </ul>
 
-      <h3>2.10 Seguridad y Administración</h3>
+      <h3>3.13 Seguridad, Parámetros y Administración</h3>
       <p>
         Control de acceso, parámetros de negocio y configuración global del sistema.
       </p>
       <ul>
         <li>Usuarios: alta, bloqueo, asignación a sucursal y caja.</li>
         <li>Roles y permisos: definición granular de qué menús y acciones puede ejecutar cada perfil (incluido permiso de aplicar descuentos en POS).</li>
-        <li><strong>Parámetros del sistema:</strong> moneda local, tasa de cambio, umbrales y demás configuración operativa de la compañía.</li>
+        <li><strong>Parámetros del sistema:</strong> moneda local, tasa de cambio diaria o por vigencia, umbral de autorización de compras y configuración operativa de la compañía.</li>
+        <li><strong>Política de inventario en POS:</strong> parámetro para exigir stock suficiente o permitir ventas que dejen existencias negativas; la validación contempla productos simples y componentes de KIT.</li>
+        <li><strong>Integración de saldos:</strong> parámetros para decidir si movimientos de caja y gastos por transferencia afectan las cuentas bancarias registradas.</li>
         <li><strong>Reglas de descuento (POS):</strong> activar/desactivar descuentos manuales; tipo (% / monto / ambos); modo por factura, por línea o ambos; base imponible; si aplica sobre promociones o sobre precios de lista distintos al base.</li>
         <li><strong>Marca y estilo:</strong> logo, nombres comerciales, colores corporativos aplicados al sistema/POS y <em>fondo personalizado de la pantalla de login</em>.</li>
         <li><strong>Dispositivos móviles:</strong> registro y vinculación de teléfonos/tablets (DeviceId) a usuario y caja, con privilegios (incl. FullAdmin multi-caja) para la app SAV Escáner.</li>
         <li><strong>Estándar:</strong> un administrador y hasta dos cajeros; sin creación de roles personalizados.</li>
       </ul>
 
-      <h3>2.11 App móvil SAV Escáner</h3>
+      <h3>3.14 App Móvil SAV Escáner</h3>
       <p>
         Aplicación móvil (.NET MAUI) que convierte el teléfono o tablet del personal en
         una herramienta de piso de venta conectada al mismo backend que el POS web.
@@ -418,53 +526,84 @@
     </section>
 
     <section id="planes">
-      <h2>3. Tabla Comparativa de Planes</h2>
+      <h2>4. Tabla Comparativa de Planes</h2>
+      <p>
+        Distribución funcional propuesta. Los límites definitivos y condiciones comerciales
+        se formalizarán en la licencia y contrato de cada cliente.
+      </p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
               <th>Concepto</th>
-              <th>Completo</th>
+              <th>Completa</th>
               <th>Profesional</th>
               <th>Comercio</th>
               <th>Estándar</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Precio licencia (USD)</td>
-              <td class="price">$XXX</td>
-              <td class="price">$XXX</td>
-              <td class="price">$XXX</td>
-              <td class="price">$XXX</td>
-            </tr>
-            <tr><td>Usuarios incluidos</td><td>Ilimitados</td><td>15</td><td>8</td><td>3</td></tr>
-            <tr><td>Sucursales</td><td>Ilimitadas</td><td>Hasta 5</td><td>Hasta 2</td><td>1</td></tr>
-            <tr><td>Bodegas</td><td>Ilimitadas</td><td>Hasta 10</td><td>Hasta 3</td><td>1</td></tr>
-            <tr><td>Cajas registradoras</td><td>Ilimitadas</td><td>Hasta 10</td><td>Hasta 3</td><td>1</td></tr>
+            <tr class="group-row"><td colspan="5">Escala incluida</td></tr>
+            <tr><td>Usuarios incluidos</td><td>Máxima escala</td><td>Escala avanzada</td><td>Escala comercial</td><td>Escala inicial</td></tr>
+            <tr><td>Sucursales</td><td>Según licencia</td><td>Según licencia</td><td>Según licencia</td><td>Según licencia</td></tr>
+            <tr><td>Bodegas</td><td>Según licencia</td><td>Según licencia</td><td>Según licencia</td><td>Según licencia</td></tr>
+            <tr><td>Cajas registradoras</td><td>Según licencia</td><td>Según licencia</td><td>Según licencia</td><td>Según licencia</td></tr>
+
+            <tr class="group-row"><td colspan="5">Punto de venta y atención comercial</td></tr>
             <tr><td>POS — venta contado</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>POS — crédito y abonos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>POS — facturas en espera</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>Cotizaciones de venta y conversión en POS</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>POS — multiprecio / listas</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Pagos mixtos, moneda local y USD</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Política permitir/exigir existencias</td><td>Configurable</td><td>Configurable</td><td>Configurable</td><td>Configurable</td></tr>
+            <tr><td>Validación previa al cobro</td><td>Simple + KIT</td><td>Simple + KIT</td><td>Producto simple</td><td>Producto simple</td></tr>
+            <tr><td>Búsqueda sin sensibilidad a acentos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>POS — descuentos autorizados (línea / factura)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí*</td></tr>
-            <tr><td>POS — detalle producto + visor de imagen</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-            <tr><td>POS — promociones y regalías</td><td>Sí (4 tipos)</td><td>Sí (4 tipos)</td><td>No</td><td>No</td></tr>
-            <tr><td>Admin hojas de promoción (autorización)</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Reglas avanzadas de descuento</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Básicas</td></tr>
+            <tr><td>Detalle desde catálogo y carrito + imágenes</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>POS — promociones y regalías</td><td>Sí (4 tipos)</td><td>Sí (4 tipos)</td><td>Sí (4 tipos)</td><td>No</td></tr>
+            <tr><td>Administración de hojas promocionales</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Segmentos de cliente</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>POS — productos relacionados/sustitutos</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+
+            <tr class="group-row"><td colspan="5">Productos, KITs e inventario</td></tr>
+            <tr><td>Catálogo, variantes, propiedades y múltiples códigos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Plantilla e importación masiva de productos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>KITs, packs y combos virtuales</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Costo, ganancia y margen estimado de KIT</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Disponibilidad armable por componentes</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Inventario — ajuste manual</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Traslados entre bodegas</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Consulta de stock y kardex</td><td>Completa</td><td>Completa</td><td>Operativa</td><td>Básica</td></tr>
+
+            <tr class="group-row"><td colspan="5">Facturación, crédito y reversión</td></tr>
             <tr><td>Panel de crédito del cliente</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
-            <tr><td>Apertura/cierre con billeteo</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Solo totales manuales</td></tr>
-            <tr><td>Movimientos de caja (turno / chica)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-            <tr><td>Historial de turnos</td><td>Completo</td><td>Completo</td><td>90 días</td><td>30 días</td></tr>
-            <tr><td>Compras / OC / recepción</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Reporte e historial de abonos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Anulación de facturas</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>Devolución total</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Devolución parcial por ítems</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
-            <tr><td>Inventario — ajuste manual</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-            <tr><td>Admin promociones y relaciones producto</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
-            <tr><td>Reglas de descuento + Marca / login</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-            <tr><td>Dispositivos móviles (registro)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-            <tr><td>App SAV Escáner (caja en vivo / consulta / pistola)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Reversión de componentes históricos de KIT</td><td>Sí</td><td>Sí</td><td>Sí, total</td><td>No</td></tr>
+
+            <tr class="group-row"><td colspan="5">Caja, gastos y tesorería</td></tr>
+            <tr><td>Apertura/cierre con billeteo</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Solo totales manuales</td></tr>
+            <tr><td>Movimientos de caja (turno / chica)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Transferencias entre fondo de turno y caja chica</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Básico</td></tr>
+            <tr><td>Historial de turnos</td><td>Sin límite temporal</td><td>Sin límite temporal</td><td>90 días</td><td>30 días</td></tr>
+            <tr><td>Registro y anulación de gastos</td><td>Integral</td><td>Integral</td><td>Integral</td><td>No</td></tr>
+            <tr><td>Bancos y tipos de tarjeta para cobros POS</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Beneficiarios y cuentas para gastos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>Afectación automática de saldos bancarios</td><td>Configurable</td><td>Configurable</td><td>Configurable</td><td>No</td></tr>
+            <tr><td>Conceptos mov./dif. caja</td><td>CRUD</td><td>CRUD</td><td>CRUD</td><td>Solo consulta</td></tr>
+
+            <tr class="group-row"><td colspan="5">Compras y abastecimiento</td></tr>
+            <tr><td>Proveedores y catálogos de compra</td><td>Sí</td><td>Sí</td><td>Catálogo básico</td><td>No</td></tr>
+            <tr><td>Cotizaciones de proveedor</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Órdenes de compra y autorización</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Recepciones parciales/completas</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+            <tr><td>Moneda, impuestos y otros costos de OC</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
+
+            <tr class="group-row"><td colspan="5">Analítica, seguridad y movilidad</td></tr>
             <tr>
               <td>Dashboard</td>
               <td>Ejecutivo completo</td>
@@ -479,75 +618,84 @@
               <td>3 reportes</td>
               <td>2 reportes</td>
             </tr>
-            <tr>
-              <td>Conceptos mov./dif. caja</td>
-              <td>CRUD</td>
-              <td>CRUD</td>
-              <td>CRUD</td>
-              <td>Solo consulta</td>
-            </tr>
             <tr><td>Roles personalizados</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+            <tr><td>Marca, colores y fondo de login</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Parámetros de compañía y reglas operativas</td><td>Avanzados</td><td>Avanzados</td><td>Operativos</td><td>Básicos</td></tr>
+            <tr><td>Dispositivos móviles (registro)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>App SAV Escáner (consulta / pistola / caja en vivo)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Supervisión móvil multi-caja</td><td>Sí</td><td>Sí</td><td>Según límites</td><td>No</td></tr>
             <tr><td>Soporte</td><td>3 meses</td><td>3 meses</td><td>2 meses</td><td>2 meses</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">*CRUD = Creación, Lectura, Actualización y Eliminación de datos. *Descuentos en Estándar sujetos a reglas y permisos configurados; requieren autorización de supervisor.</p>
+      <p class="note">*CRUD = Creación, lectura, actualización y eliminación. Los descuentos en Estándar están sujetos a reglas y permisos configurados y requieren autorización. La asignación de las mejoras nuevas deberá reflejarse también en los controles técnicos de licencia.</p>
     </section>
 
     <section id="servicios-incluidos">
-      <h2>4. Servicios Incluidos</h2>
+      <h2>5. Servicios Incluidos</h2>
       <ul class="included-list">
-        <li>Instalación</li>
-        <li>Capacitación (8 horas)</li>
-        <li>Migración de productos y clientes</li>
+        <li>Instalación y configuración inicial del ambiente contratado.</li>
+        <li>Capacitación funcional inicial (8 horas).</li>
+        <li>Migración inicial de productos y clientes según plantilla acordada.</li>
+        <li>Configuración base de sucursales, bodegas, cajas, usuarios y permisos.</li>
+        <li>Acompañamiento de puesta en marcha y validación del primer ciclo de venta/cierre.</li>
       </ul>
     </section>
 
     <section id="servicios-adicionales">
-      <h2>4. Servicios Adicionales (opcionales)</h2>
+      <h2>6. Servicios Adicionales (Opcionales)</h2>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
               <th>Servicio</th>
-              <th>Precio (USD)</th>
+              <th>Condición comercial</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Reportes adicionales</td><td class="price">$XX c/u</td></tr>
-            <tr><td>Soporte (Después del tiempo incluido)</td><td class="price">$XX/hora</td></tr>
-            <tr><td>Sucursal adicional</td><td class="price">$XX c/u</td></tr>
-            <tr><td>Caja adicional</td><td class="price">$XX c/u</td></tr>
+            <tr><td>Reportes o indicadores personalizados</td><td>Cotización según alcance</td></tr>
+            <tr><td>Soporte posterior al período incluido</td><td>Por definir</td></tr>
+            <tr><td>Migraciones, depuración o homologación adicional de datos</td><td>Cotización según volumen</td></tr>
+            <tr><td>Integraciones con sistemas o servicios de terceros</td><td>Cotización según análisis</td></tr>
+            <tr><td>Sucursales, cajas, usuarios o dispositivos adicionales al límite contratado</td><td>Por definir según licencia</td></tr>
+            <tr><td>Capacitación adicional o acompañamiento en sitio</td><td>Por definir</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="conclusion">
-      <h2>5. Conclusión</h2>
+      <h2>7. Recomendación por Tipo de Operación</h2>
       <p>
         SAV ofrece una ruta de crecimiento clara: el cliente puede iniciar con el plan
-        Estándar (USD XXX) para digitalizar ventas y control básico de inventario en un
-        solo punto, y escalar a Comercio, Profesional o Completo conforme abra
-        nuevas sucursales, requiera compras integradas o necesite promociones y
-        reportes avanzados.
+        <strong>Estándar</strong> para digitalizar ventas al contado, caja e inventario
+        básico en un solo punto, con reglas esenciales de descuento y la posibilidad de
+        decidir si se vende o no sin existencias.
       </p>
       <p>
-        El plan Completo a USD XXX representa la solución sin límites operativos: multi-
-        sucursal, multi-bodega, multi-caja, ciclo completo de compras, administración de
-        promociones (precio fijo, porcentual y regalías XtoX / XtoY) con autorización,
-        segmentos de cliente para campañas dirigidas, relaciones de producto, panel de
-        crédito con aging, descuentos auditados, marca corporativa y el ecosistema
-        de reportes y dashboard ejecutivo. Es la opción recomendada para cadenas,
-        distribuidores y negocios con operación madura que buscan una plataforma unificada
-        sin módulos por separado.
+        <strong>Comercio</strong> es la opción recomendada para tiendas en crecimiento:
+        incorpora crédito y abonos, facturas en espera, cotizaciones,
+        promociones y regalías, devolución total, gastos, bancos y operación limitada
+        en varias sucursales.
+      </p>
+      <p>
+        <strong>Profesional</strong> agrega KITs/packs virtuales, el ciclo completo de
+        compras, traslados entre bodegas, devoluciones parciales, anulaciones, relaciones
+        entre productos, dashboard ejecutivo y controles avanzados. Se recomienda para distribuidores y
+        empresas con abastecimiento formal o varias ubicaciones.
+      </p>
+      <p>
+        <strong>Completa</strong> ofrece la mayor escala operativa, catálogo integral de
+        reportes, supervisión multi-sucursal y todas las capacidades administrativas,
+        comerciales, móviles y de trazabilidad. Es la opción recomendada para cadenas y
+        negocios con operación madura que buscan una plataforma unificada.
       </p>
       <p>
         Todos los planes incluyen el núcleo POS probado en producción, seguridad por
         usuarios, branding corporativo, la app móvil SAV Escáner (consulta, pistola de
         códigos hacia la caja y panel de turno en vivo) y actualizaciones de mantenimiento
-        gratuitas durante los primeros meses según el nivel de soporte contratado. Para
-        cotizaciones personalizadas, migraciones o demostraciones en vivo, contacte al
+        durante los primeros meses según el nivel de soporte contratado. Para definir
+        condiciones comerciales, migraciones o demostraciones en vivo, contacte al
         equipo comercial de SAV.
       </p>
     </section>
