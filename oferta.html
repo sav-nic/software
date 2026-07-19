@@ -243,7 +243,8 @@
         las capacidades más recientes: KITs o packs virtuales, política configurable para
         vender con o sin existencias, cotizaciones de venta, descuentos autorizados por
         línea o factura, promociones y regalías, control de gastos y bancos, carga masiva
-        de productos, panel de crédito, multiprecio, marca corporativa y la app móvil.
+        de productos, panel de crédito, multiprecio, marca corporativa, generador universal
+        de etiquetas, reportes dinámicos licenciables y la app móvil.
       </p>
     </section>
 
@@ -277,6 +278,18 @@
         <div class="feature-card">
           <strong>Catálogo e importación mejorados</strong>
           <p>Variantes, propiedades, múltiples códigos, imágenes, vencimientos, búsqueda sin sensibilidad a acentos y plantillas Excel.</p>
+        </div>
+        <div class="feature-card">
+          <strong>16 reportes dinámicos</strong>
+          <p>Ventas, margen, clientes, crédito, inventario, KITs, gastos, caja, compras y promociones con KPIs, gráficos, reglas visuales y exportación.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Generador universal de etiquetas</strong>
+          <p>Búsqueda bajo demanda, selección de productos, cantidades por artículo, múltiples diseños, vista previa e impresión de códigos de barra.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Licencias modulares y seguras</strong>
+          <p>Capacidades por plan, licencia independiente de reportes y activación opcional del generador de etiquetas sin recompilar el sistema.</p>
         </div>
       </div>
     </section>
@@ -477,18 +490,25 @@
 
       <h3>3.12 Reportes y Auditoría</h3>
       <p>
-        Motor de reportes con visor integrado y exportación para análisis gerencial.
+        Motor dinámico con visor integrado, alcance por sucursales asignadas y autorización
+        acumulativa por rol y licencia criptográfica de reportes.
       </p>
       <ul>
-        <li>Ventas: por año, por período, por producto, por categoría, devoluciones y facturas anuladas.</li>
-        <li>Inventario: existencias actuales, movimientos por producto y por categoría.</li>
-        <li>Caja y gastos: estado de turnos, diferencias de arqueo, fondos, caja chica, gastos y abonos pendientes.</li>
-        <li>Promociones: descuentos, promociones aplicadas, salidas por regalía y porcentaje de ventas con descuento.</li>
+        <li><strong>Ventas:</strong> resumen ejecutivo; ventas y margen por producto; ventas por cliente/segmento; formas de pago y monedas; cartera y antigüedad; devoluciones; facturas anuladas.</li>
+        <li><strong>Inventario:</strong> existencias, mínimos y valorización; kardex; ajustes y traslados; rendimiento, consumo y margen de KITs.</li>
+        <li><strong>Administración:</strong> gastos por tipo/beneficiario/origen; cierres y diferencias de caja; movimientos y flujo de fondos.</li>
+        <li><strong>Compras y promociones:</strong> cumplimiento de órdenes y recepciones; rendimiento de promociones y descuentos.</li>
+        <li><strong>Experiencia analítica:</strong> columnas configurables, formatos, agrupaciones, KPIs, gráficos, paletas, reglas de alerta, impresión y exportación.</li>
+        <li><strong>Seguridad de datos:</strong> cada consulta limita los resultados a las sucursales asignadas al usuario, aunque se manipulen los filtros desde el navegador.</li>
+        <li><strong>Licencia dinámica REPORTKEY:</strong> los IDs autorizados se entregan mediante una licencia criptográfica independiente. Se pueden agregar o vender reportes adicionales sin recompilar ni publicar nuevamente API/Web.</li>
+        <li><strong>RBAC + licencia:</strong> un reporte solo aparece y se ejecuta cuando el rol del usuario tiene menú y el ID está incluido en REPORTKEY; los grupos vacíos se ocultan.</li>
         <li>Auditoría operativa: autorizaciones, usuario, caja, sucursal y trazabilidad de documentos.</li>
-        <li><strong>Completa:</strong> acceso al visor de reportes y catálogo completo.</li>
-        <li><strong>Exportación y presentación:</strong> Excel, CSV, PDF, impresión, configuración de columnas, formatos y reglas visuales según reporte.</li>
-        <li><strong>Estándar:</strong> dos reportes fijos (ventas por período y existencias).</li>
       </ul>
+      <p class="note">
+        El plan controla el nivel de presentación y análisis disponible; los reportes concretos
+        contratados se determinan por REPORTKEY. Un cliente puede adquirir reportes adicionales
+        de forma individual, independientemente de su paquete base.
+      </p>
 
       <h3>3.13 Seguridad, Parámetros y Administración</h3>
       <p>
@@ -503,6 +523,9 @@
         <li><strong>Reglas de descuento (POS):</strong> activar/desactivar descuentos manuales; tipo (% / monto / ambos); modo por factura, por línea o ambos; base imponible; si aplica sobre promociones o sobre precios de lista distintos al base.</li>
         <li><strong>Marca y estilo:</strong> logo, nombres comerciales, colores corporativos aplicados al sistema/POS y <em>fondo personalizado de la pantalla de login</em>.</li>
         <li><strong>Dispositivos móviles:</strong> registro y vinculación de teléfonos/tablets (DeviceId) a usuario y caja, con privilegios (incl. FullAdmin multi-caja) para la app SAV Escáner.</li>
+        <li><strong>Editor seguro de licencia:</strong> actualización administrativa de licencia principal, soporte y REPORTKEY fuera del mantenimiento genérico, con permiso dedicado, motivo obligatorio y cierre de sesiones.</li>
+        <li><strong>Auditoría criptográfica:</strong> registro de usuario, fecha UTC, motivo, hashes anterior/nuevo e IDs de reportes resultantes sin almacenar ni exponer las llaves completas.</li>
+        <li><strong>Caché de licencia:</strong> capacidades y reportes se almacenan temporalmente para reducir carga del API y se invalidan inmediatamente después de una actualización.</li>
         <li><strong>Estándar:</strong> un administrador y hasta dos cajeros; sin creación de roles personalizados.</li>
       </ul>
 
@@ -523,6 +546,23 @@
         La app se ofrece como complemento operativo del ecosistema SAV (no sustituye el POS
         de facturación). Requiere licencia SAV activa, API accesible en red y dispositivos registrados.
       </p>
+
+      <h3>3.15 Generador Web de Etiquetas</h3>
+      <p>
+        Módulo web independiente y ligero para preparar e imprimir etiquetas universales
+        directamente desde el catálogo SAV. Se abre en una ventana propia y utiliza la misma
+        sesión segura del usuario.
+      </p>
+      <ul>
+        <li><strong>Consulta bajo demanda:</strong> no carga productos al iniciar; permite buscar por SKU, código o nombre, o consultar todo el catálogo si el usuario lo solicita.</li>
+        <li><strong>Selección de impresión:</strong> resultados y productos elegidos en paneles separados, con controles +/− para definir cantidades por artículo.</li>
+        <li><strong>Diseños incluidos:</strong> etiqueta básica, nombre, nombre/precio, promoción, inventario, horizontal, precio protagonista y formatos compactos.</li>
+        <li><strong>Códigos de barra:</strong> generación CODE128 y otros formatos compatibles, priorizando legibilidad y espacio del código sobre el precio.</li>
+        <li><strong>Vista previa y medidas:</strong> ancho/alto en milímetros, tipo de código y plantilla configurables antes de imprimir.</li>
+        <li><strong>Impresión universal:</strong> documento aislado con tamaño físico exacto para impresoras térmicas o convencionales, sin instalar componentes de escritorio.</li>
+        <li><strong>Preferencia persistente:</strong> recuerda localmente la última plantilla seleccionada por el cliente.</li>
+        <li><strong>Control por licencia:</strong> el menú solo aparece cuando la capacidad <em>GeneradorEtiquetas</em> está activa; además requiere permiso de impresión de etiquetas.</li>
+      </ul>
     </section>
 
     <section id="planes">
@@ -577,6 +617,12 @@
             <tr><td>Traslados entre bodegas</td><td>Sí</td><td>Sí</td><td>No</td><td>No</td></tr>
             <tr><td>Consulta de stock y kardex</td><td>Completa</td><td>Completa</td><td>Operativa</td><td>Básica</td></tr>
 
+            <tr class="group-row"><td colspan="5">Etiquetas y códigos de barra</td></tr>
+            <tr><td>Generador web universal de etiquetas</td><td>Opcional según licencia</td><td>Opcional según licencia</td><td>Opcional según licencia</td><td>Opcional según licencia</td></tr>
+            <tr><td>Búsqueda y selección de productos</td><td>Sí*</td><td>Sí*</td><td>Sí*</td><td>Sí*</td></tr>
+            <tr><td>Plantillas, vista previa y cantidades por producto</td><td>Sí*</td><td>Sí*</td><td>Sí*</td><td>Sí*</td></tr>
+            <tr><td>Impresión con medidas físicas y códigos de barra</td><td>Sí*</td><td>Sí*</td><td>Sí*</td><td>Sí*</td></tr>
+
             <tr class="group-row"><td colspan="5">Facturación, crédito y reversión</td></tr>
             <tr><td>Panel de crédito del cliente</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Reporte e historial de abonos</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
@@ -612,12 +658,16 @@
               <td>Básico</td>
             </tr>
             <tr>
-              <td>Reportes</td>
-              <td>Catálogo completo</td>
-              <td>Ventas + inventario</td>
-              <td>3 reportes</td>
-              <td>2 reportes</td>
+              <td>IDs de reportes autorizados</td>
+              <td>Según REPORTKEY</td>
+              <td>Según REPORTKEY</td>
+              <td>Según REPORTKEY</td>
+              <td>Según REPORTKEY</td>
             </tr>
+            <tr><td>Reportes adicionales sin recompilar</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Nivel visual de reportes</td><td>Avanzado</td><td>Avanzado</td><td>Operativo</td><td>Básico</td></tr>
+            <tr><td>Alcance por sucursales del usuario</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Editor y auditoría de licencia</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>Roles personalizados</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Marca, colores y fondo de login</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>Parámetros de compañía y reglas operativas</td><td>Avanzados</td><td>Avanzados</td><td>Operativos</td><td>Básicos</td></tr>
@@ -628,7 +678,7 @@
           </tbody>
         </table>
       </div>
-      <p class="note">*CRUD = Creación, lectura, actualización y eliminación. Los descuentos en Estándar están sujetos a reglas y permisos configurados y requieren autorización. La asignación de las mejoras nuevas deberá reflejarse también en los controles técnicos de licencia.</p>
+      <p class="note">*CRUD = Creación, lectura, actualización y eliminación. Los descuentos en Estándar están sujetos a reglas y permisos configurados y requieren autorización. Las filas marcadas con * dependen de que el GeneradorEtiquetas esté activo en la licencia. Los IDs concretos de reportes dependen exclusivamente de REPORTKEY y del rol asignado.</p>
     </section>
 
     <section id="servicios-incluidos">
@@ -654,6 +704,8 @@
           </thead>
           <tbody>
             <tr><td>Reportes o indicadores personalizados</td><td>Cotización según alcance</td></tr>
+            <tr><td>Paquetes o reportes individuales adicionales (REPORTKEY)</td><td>Por definir según selección</td></tr>
+            <tr><td>Plantillas de etiqueta personalizadas</td><td>Cotización según diseño y formato</td></tr>
             <tr><td>Soporte posterior al período incluido</td><td>Por definir</td></tr>
             <tr><td>Migraciones, depuración o homologación adicional de datos</td><td>Cotización según volumen</td></tr>
             <tr><td>Integraciones con sistemas o servicios de terceros</td><td>Cotización según análisis</td></tr>
@@ -670,7 +722,8 @@
         SAV ofrece una ruta de crecimiento clara: el cliente puede iniciar con el plan
         <strong>Estándar</strong> para digitalizar ventas al contado, caja e inventario
         básico en un solo punto, con reglas esenciales de descuento y la posibilidad de
-        decidir si se vende o no sin existencias.
+        decidir si se vende o no sin existencias. Puede incorporar reportes individuales
+        y el generador de etiquetas como capacidades adicionales de licencia.
       </p>
       <p>
         <strong>Comercio</strong> es la opción recomendada para tiendas en crecimiento:
@@ -686,7 +739,7 @@
       </p>
       <p>
         <strong>Completa</strong> ofrece la mayor escala operativa, catálogo integral de
-        reportes, supervisión multi-sucursal y todas las capacidades administrativas,
+        capacidades analíticas, supervisión multi-sucursal y todas las capacidades administrativas,
         comerciales, móviles y de trazabilidad. Es la opción recomendada para cadenas y
         negocios con operación madura que buscan una plataforma unificada.
       </p>
