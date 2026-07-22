@@ -208,7 +208,7 @@
       <div class="brand">
         <img
           class="logo"
-          src="logo.jpg"
+          src="SAV.jpg"
           alt="Logo de la empresa"
           onerror="this.style.display='none'"
         />
@@ -229,7 +229,8 @@
         POS táctil, administración de turnos de caja con arqueo detallado, seguridad por
         roles y permisos, un panel ejecutivo para la toma de decisiones y la
         <strong>app móvil SAVI Escáner</strong>, que extiende la operación al piso de venta:
-        consulta de productos, escaneo hacia la caja y supervisión de turnos en tiempo real.
+        consulta de productos, escaneo directo o por carrito local hacia la caja, creación de
+        cotizaciones desde el teléfono y supervisión de turnos en tiempo real.
       </p>
       <p>
         Esta propuesta presenta cuatro niveles de licenciamiento — Completa,
@@ -269,7 +270,15 @@
         </div>
         <div class="feature-card">
           <strong>Cotizaciones de venta</strong>
-          <p>Creación desde el carrito, impresión, consulta, vigencia, anulación, recuperación en POS y conversión controlada a factura.</p>
+          <p>Creación desde el carrito del POS o desde la app SAVI Escáner, impresión, consulta, vigencia, anulación, recuperación en POS y conversión controlada a factura.</p>
+        </div>
+        <div class="feature-card">
+          <strong>Panel de crédito del cliente</strong>
+          <p>Score de pago, aging de saldos, mix contado/crédito, facturas pendientes e historial de abonos, con acceso rápido desde clientes o facturas con saldo.</p>
+        </div>
+        <div class="feature-card">
+          <strong>App SAVI Escáner ampliada</strong>
+          <p>Envío directo al POS, carrito local con validación de productos y totales, y generación de cotizaciones listadas para cargarlas en caja.</p>
         </div>
         <div class="feature-card">
           <strong>Gastos, bancos y caja chica</strong>
@@ -320,7 +329,7 @@
         <li><strong>Ventas al contado:</strong> registro de líneas, cantidades, precios y totales con impresión de ticket.</li>
         <li><strong>Ventas a crédito y abonos:</strong> gestión de saldos pendientes, pagos parciales y cobro de facturas pendientes desde el POS (Completa, Profesional, Comercio).</li>
         <li><strong>Facturas en espera (parked):</strong> pausar una venta y retomarla después —incluso desde otra terminal— sin perder el carrito (Completa, Profesional, Comercio).</li>
-        <li><strong>Cotizaciones:</strong> generar una propuesta desde el carrito, imprimirla, localizarla por cliente/fecha/estado y cargarla posteriormente para convertirla en factura (Completa, Profesional, Comercio).</li>
+        <li><strong>Cotizaciones:</strong> generar una propuesta desde el carrito del POS o recibir cotizaciones creadas desde la app SAVI Escáner; imprimirlas, localizarlas por cliente/fecha/estado y cargarlas para convertirlas en factura (Completa, Profesional, Comercio).</li>
         <li><strong>Multiprecio:</strong> selección de lista de precio por producto (mostrador, mayoreo, campaña, etc.) directamente en la tarjeta del catálogo.</li>
         <li><strong>Descuentos manuales con autorización:</strong> reglas configurables (% o monto fijo) aplicables por <em>línea</em>, por <em>factura</em> o ambos; cada aplicación genera ticket de autorización de supervisor con permiso dedicado y queda auditada.</li>
         <li><strong>Supervisor:</strong> autorización para abrir/cerrar turno, anular líneas, vaciar carrito, descuentos y demás operaciones sensibles según permisos.</li>
@@ -330,7 +339,8 @@
         <li><strong>Búsqueda tolerante a acentos:</strong> encuentra nombre, SKU y códigos aunque el usuario escriba sin tildes, por ejemplo «azucar» para «azúcar».</li>
         <li><strong>Detalle de producto:</strong> ficha con stock, precios, promociones e imágenes disponible desde el resultado de búsqueda y desde cada línea del detalle del carrito.</li>
         <li><strong>Productos relacionados, sustitutos y surtidos:</strong> sugerencias configuradas por el negocio para aumentar el ticket promedio (Completa y Profesional).</li>
-        <li><strong>Escáner móvil → carrito:</strong> recepción en tiempo real de códigos enviados desde la app SAVI Escáner a la caja abierta.</li>
+        <li><strong>Escáner móvil → carrito:</strong> recepción en tiempo real de códigos enviados desde la app SAVI Escáner (envío directo o lote desde carrito local) a la caja abierta.</li>
+        <li><strong>Panel de crédito (acceso desde POS):</strong> consulta rápida del estado de cartera del cliente seleccionado para decisiones de cobro o venta a crédito (Completa, Profesional, Comercio).</li>
         <li><strong>Modo pantalla completa</strong> y branding corporativo (colores y logo) personalizables en todos los planes.</li>
       </ul>
 
@@ -371,8 +381,8 @@
       <ul>
         <li>Listado de facturas emitidas con filtros por fecha, cliente y estado.</li>
         <li>Detalle de factura: líneas, pagos aplicados, usuario y caja que la generó.</li>
-        <li><strong>Cotizaciones de venta:</strong> listado por vigencia y estado, consulta detallada, impresión, anulación, reapertura en POS y marcación automática como convertida al facturar (Completa, Profesional y Comercio).</li>
-        <li><strong>Panel de crédito del cliente:</strong> vista consolidada con score de pago, aging de saldos (0–30 / 31–60 / 61–90 / +90 días), mix contado vs crédito, facturas pendientes y historial de abonos — acceso rápido desde clientes o facturas con saldo (Completa, Profesional, Comercio).</li>
+        <li><strong>Cotizaciones de venta:</strong> listado por vigencia y estado, consulta detallada, impresión, anulación, reapertura en POS y marcación automática como convertida al facturar; incluye cotizaciones generadas desde el POS o desde la app móvil (Completa, Profesional y Comercio).</li>
+        <li><strong>Panel de crédito del cliente:</strong> vista consolidada con score de pago, aging de saldos (0–30 / 31–60 / 61–90 / +90 días), mix contado vs crédito, facturas pendientes y historial de abonos — acceso rápido desde clientes, facturas con saldo o el POS (Completa, Profesional, Comercio).</li>
         <li><strong>Anulaciones:</strong> cancelación controlada de una factura completa con impacto en inventario y caja (Completa y Profesional).</li>
         <li><strong>Devolución total:</strong> reversión de todos los ítems pendientes de una venta (Completa, Profesional y Comercio).</li>
         <li><strong>Devolución parcial por ítems:</strong> selección de productos y cantidades, incluyendo restitución de componentes históricos de KITs, con historial acumulado hasta completar el documento (Completa y Profesional).</li>
@@ -386,7 +396,7 @@
       </p>
       <ul>
         <li>Catálogo de productos: código, descripción, categoría, marca/modelo, proveedor, unidad, impuestos, vencimiento, control de stock, precios y estado.</li>
-        <li>Variantes y propiedades configurables: talla, color, presentación u otros atributos definidos por el negocio.</li>
+        <li>Variantes y propiedades configurables: talla, color, presentación u otros atributos definidos por el negocio; número de parte (<em>NoParte</em>) opcional por variante para búsqueda y ficha comercial.</li>
         <li>Múltiples códigos de barra por variante, con búsqueda y lectura desde POS y app móvil.</li>
         <li>Categorías y subcategorías: organización jerárquica para búsqueda y reportes.</li>
         <li>Tipos / listas de precio: precios por lista y moneda, seleccionables en el POS (multiprecio).</li>
@@ -522,7 +532,7 @@
         <li><strong>Integración de saldos:</strong> parámetros para decidir si movimientos de caja y gastos por transferencia afectan las cuentas bancarias registradas.</li>
         <li><strong>Reglas de descuento (POS):</strong> activar/desactivar descuentos manuales; tipo (% / monto / ambos); modo por factura, por línea o ambos; base imponible; si aplica sobre promociones o sobre precios de lista distintos al base.</li>
         <li><strong>Marca y estilo:</strong> logo, nombres comerciales, colores corporativos aplicados al sistema/POS y <em>fondo personalizado de la pantalla de login</em>.</li>
-        <li><strong>Dispositivos móviles:</strong> registro y vinculación de teléfonos/tablets (DeviceId) a usuario y caja, con privilegios (incl. FullAdmin multi-caja) para la app SAV Escáner.</li>
+        <li><strong>Dispositivos móviles:</strong> registro y vinculación de teléfonos/tablets (DeviceId) a usuario y caja, con privilegios (incl. FullAdmin multi-caja) para la app SAVI Escáner.</li>
         <li><strong>Editor seguro de licencia:</strong> actualización administrativa de licencia principal, soporte y REPORTKEY fuera del mantenimiento genérico, con permiso dedicado, motivo obligatorio y cierre de sesiones.</li>
         <li><strong>Auditoría criptográfica:</strong> registro de usuario, fecha UTC, motivo, hashes anterior/nuevo e IDs de reportes resultantes sin almacenar ni exponer las llaves completas.</li>
         <li><strong>Caché de licencia:</strong> capacidades y reportes se almacenan temporalmente para reducir carga del API y se invalidan inmediatamente después de una actualización.</li>
@@ -536,8 +546,11 @@
         Los dispositivos se administran desde Seguridad → Dispositivos.
       </p>
       <ul>
-        <li><strong>Escáner de productos:</strong> la cámara lee códigos de barra/QR y envía el código en tiempo real a la caja destino; el POS agrega el artículo al carrito como una pistola de código de barras.</li>
-        <li><strong>Consulta de producto:</strong> modo lookup para ver existencia, precio base, listas de precio, promociones y regalías vigentes sin interrumpir la venta en mostrador.</li>
+        <li><strong>Escáner de productos:</strong> la cámara lee códigos de barra/QR y los envía en tiempo real a la caja destino (modo <em>envío directo al POS</em>); el POS agrega el artículo al carrito como una pistola de código de barras.</li>
+        <li><strong>Carrito local:</strong> modo alterno que valida cada producto contra el catálogo, acumula cantidades y muestra subtotal, IVA y total antes de decidir la acción.</li>
+        <li><strong>Enviar lote al POS:</strong> desde el carrito local se reenvían los códigos acumulados a la caja abierta para completar el cobro en mostrador.</li>
+        <li><strong>Cotizar desde la app:</strong> convierte el carrito local en una cotización de venta (número <code>COT-…</code>) listada en el módulo de cotizaciones y recuperable en el POS para convertirla en factura (requiere licencia de cotizaciones y usuario asignado al dispositivo).</li>
+        <li><strong>Consulta de producto:</strong> modo lookup para ver existencia, precio base, listas de precio, promociones, regalías y número de parte sin interrumpir la venta en mostrador.</li>
         <li><strong>Panel de caja en vivo:</strong> estado del turno (abierto/cerrado), saldos, flujo del turno, gastos, pagos y picos de venta — ideal para supervisión desde el piso o la gerencia.</li>
         <li><strong>Selección de caja:</strong> dispositivo vinculado a una registradora, o FullAdmin con cambio de caja para monitorear varias estaciones.</li>
         <li><strong>Alta segura:</strong> solicitud de vinculación del DeviceId al servidor; solo dispositivos autorizados operan contra la API.</li>
@@ -672,13 +685,14 @@
             <tr><td>Marca, colores y fondo de login</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
             <tr><td>Parámetros de compañía y reglas operativas</td><td>Avanzados</td><td>Avanzados</td><td>Operativos</td><td>Básicos</td></tr>
             <tr><td>Dispositivos móviles (registro)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
-            <tr><td>App SAVI Escáner (consulta / pistola / caja en vivo)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>App SAVI Escáner (consulta / pistola / carrito / caja en vivo)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>App SAVI Escáner — cotizar desde carrito local</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
             <tr><td>Supervisión móvil multi-caja</td><td>Sí</td><td>Sí</td><td>Según límites</td><td>No</td></tr>
             <tr><td>Soporte</td><td>3 meses</td><td>3 meses</td><td>2 meses</td><td>2 meses</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">*CRUD = Creación, lectura, actualización y eliminación. Los descuentos en Estándar están sujetos a reglas y permisos configurados y requieren autorización. Las filas marcadas con * dependen de que el GeneradorEtiquetas esté activo en la licencia. Los IDs concretos de reportes dependen exclusivamente de REPORTKEY y del rol asignado.</p>
+      <p class="note">*CRUD = Creación, lectura, actualización y eliminación. Los descuentos en Estándar están sujetos a reglas y permisos configurados y requieren autorización. Las filas marcadas con * dependen de que el GeneradorEtiquetas esté activo en la licencia. Cotizar desde la app requiere la misma capacidad de cotizaciones de venta que el POS (no disponible en Estándar) y un usuario asignado al dispositivo. Los IDs concretos de reportes dependen exclusivamente de REPORTKEY y del rol asignado.</p>
     </section>
 
     <section id="servicios-incluidos">
@@ -745,8 +759,8 @@
       </p>
       <p>
         Todos los planes incluyen el núcleo POS probado en producción, seguridad por
-        usuarios, branding corporativo, la app móvil SAVI Escáner (consulta, pistola de
-        códigos hacia la caja y panel de turno en vivo) y actualizaciones de mantenimiento
+        usuarios, branding corporativo, la app móvil SAVI Escáner (consulta, pistola o carrito
+        local hacia la caja, cotización desde el teléfono y panel de turno en vivo) y actualizaciones de mantenimiento
         durante los primeros meses según el nivel de soporte contratado. Para definir
         condiciones comerciales, migraciones o demostraciones en vivo, contacte al
         equipo comercial de SAVI.
