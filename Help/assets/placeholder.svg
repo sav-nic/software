@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title description">
+  <title id="title">Imagen pendiente del manual SAV</title>
+  <desc id="description">Marcador temporal para sustituir por una captura del sistema.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#e8f7f4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="36" fill="url(#background)"/>
+  <rect x="70" y="70" width="1140" height="580" rx="28" fill="#fff" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="16 14"/>
+  <g transform="translate(500 190)">
+    <rect x="0" y="0" width="280" height="210" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="8"/>
+    <circle cx="80" cy="67" r="29" fill="#a5b4fc"/>
+    <path d="M30 175 100 105l48 47 35-34 67 57Z" fill="#5b6ee1"/>
+  </g>
+  <text x="640" y="470" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" fill="#25396f">Captura pendiente</text>
+  <text x="640" y="525" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="25" fill="#64748b">Sustituya este archivo por la imagen indicada en el pie</text>
+</svg>

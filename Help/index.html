@@ -1,0 +1,1653 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manual de usuario del sistema SAVI">
+    <title>Manual de usuario SAVI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-manual-mode="client">
+    <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir navegación">☰</button>
+        <div class="brand">
+            <span class="brand-mark">SAVI</span>
+            <span class="brand-copy">
+                <strong>Manual de usuario</strong>
+                <small>Configuración y operación</small>
+            </span>
+        </div>
+        <label class="search">
+            <span class="sr-only"></span>
+            <input id="manualSearch" type="search" placeholder="Buscar: abrir caja, crear producto, permisos..." autocomplete="off">
+            <kbd>Ctrl K</kbd>
+        </label>
+        <button class="print-button" id="printManual" type="button">Imprimir / PDF</button>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar" aria-label="Contenido del manual">
+            <div class="sidebar-title">Primeros pasos</div>
+            <a class="nav-link active" href="#inicio"><span class="number">01</span>Introducción</a>
+            <a class="nav-link" href="#puesta-en-marcha"><span class="number">02</span>Puesta en marcha</a>
+            <a class="nav-link" href="#configuracion-base"><span class="number">03</span>Configuración base</a>
+            <a class="nav-link" href="#estructura-empresa"><span class="number">04</span>Sucursales, bodegas y cajas</a>
+            <a class="nav-link" href="#seguridad-operativa"><span class="number">05</span>Usuarios y roles</a>
+
+            <div class="sidebar-title">Catálogos y operación</div>
+            <a class="nav-link" href="#catalogos-productos"><span class="number">06</span>Catálogos de productos</a>
+            <a class="nav-link" href="#productos"><span class="number">07</span>Productos y variantes</a>
+            <a class="nav-link" href="#kits"><span class="number">08</span>Kits y productos compuestos</a>
+            <a class="nav-link" href="#clientes-proveedores"><span class="number">09</span>Clientes y proveedores</a>
+            <a class="nav-link" href="#inventario"><span class="number">10</span>Inventario y almacén</a>
+            <a class="nav-link" href="#compras"><span class="number">11</span>Compras y recepciones</a>
+            <a class="nav-link" href="#precios-promociones"><span class="number">12</span>Precios y promociones</a>
+
+            <div class="sidebar-title">Venta y control</div>
+            <a class="nav-link" href="#pos-preparacion"><span class="number">13</span>Preparar el POS</a>
+            <a class="nav-link" href="#pos-venta"><span class="number">14</span>Venta en POS</a>
+            <a class="nav-link" href="#pos-cobro"><span class="number">15</span>Cobro y crédito</a>
+            <a class="nav-link" href="#pos-posterior"><span class="number">16</span>Devoluciones y anulaciones</a>
+            <a class="nav-link" href="#caja-gastos"><span class="number">17</span>Caja y gastos</a>
+            <a class="nav-link" href="#reportes"><span class="number">18</span>Reportes</a>
+            <a class="nav-link" href="#etiquetas"><span class="number">19</span>Etiquetas</a>
+            <a class="nav-link" href="#app-escaner"><span class="number">20</span>App SAVI Escáner</a>
+            <a class="nav-link" href="#rutinas"><span class="number">21</span>Rutinas recomendadas</a>
+            <a class="nav-link" href="#problemas"><span class="number">22</span>Solución de problemas</a>
+
+            <div class="technical-navigation">
+                <div class="sidebar-title">Uso técnico</div>
+                <a class="nav-link" href="#arquitectura"><span class="number">23</span>Arquitectura interna</a>
+                <a class="nav-link" href="#base-datos"><span class="number">24</span>Base de datos</a>
+                <a class="nav-link" href="#superusuario"><span class="number">25</span>Usuario técnico protegido</a>
+                <a class="nav-link" href="#permisos"><span class="number">26</span>Permisos y licencias</a>
+                <a class="nav-link" href="#reportes-tecnico"><span class="number">27</span>Motor de reportes</a>
+                <a class="nav-link" href="#operacion-tecnica"><span class="number">28</span>Operación técnica</a>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="hero" id="inicio">
+                <span class="eyebrow">Guía oficial de operación</span>
+                <h1>SAVI, de la configuración inicial al cierre diario</h1>
+                <p>
+                    Este manual explica cómo preparar la empresa, construir los catálogos,
+                    operar inventario, compras, caja y punto de venta, y administrar la
+                    seguridad, reportes y solución de problemas frecuentes.
+                </p>
+                <div class="hero-meta">
+                    <span>Manual funcional</span>
+                    <span>Guía del POS</span>
+                    <span>App SAVI Escáner</span>
+                    <span>Seguridad operativa</span>
+                    <span>Reportes y etiquetas</span>
+                    <span>Actualizado: julio 2026</span>
+                </div>
+            </section>
+
+            <div class="search-empty" id="searchEmpty">
+                <h2>Sin coincidencias</h2>
+                <p>Pruebe con términos más generales, por ejemplo: producto, caja, venta o permiso.</p>
+            </div>
+
+            <section class="manual-section" id="puesta-en-marcha">
+                <div class="section-heading">
+                    <span class="section-icon">🚀</span>
+                    <div>
+                        <h2>Puesta en marcha</h2>
+                        <p>Orden recomendado para habilitar una instalación sin dejar dependencias incompletas.</p>
+                    </div>
+                </div>
+
+                <div class="callout warning">
+                    <strong>Antes de registrar operaciones</strong>
+                    Verifique la licencia, fecha del servidor, respaldo de la base de datos y acceso del usuario administrador.
+                    No inicie ventas reales en una base utilizada para pruebas.
+                </div>
+
+                <h3>Secuencia mínima de configuración</h3>
+                <ol class="step-list">
+                    <li><strong>Licencia y parámetros.</strong> Valide la licencia del sistema, la licencia de reportes, el número de soporte y los parámetros de compañía.</li>
+                    <li><strong>Ubicación de la empresa.</strong> Confirme regiones y ciudades; luego cree sucursales.</li>
+                    <li><strong>Inventario físico.</strong> Cree bodegas y asócielas con la sucursal correcta.</li>
+                    <li><strong>Operación de caja.</strong> Cree cajas registradoras, terminales y configuración POS.</li>
+                    <li><strong>Seguridad.</strong> Configure roles, usuarios, sucursales y cajas asignadas. Si usará SAVI Escáner, autorice dispositivos móviles y vincúlelos a usuario/caja.</li>
+                    <li><strong>Catálogos comerciales.</strong> Registre categorías, marcas, modelos, propiedades, tipos de precio, clientes y proveedores.</li>
+                    <li><strong>Productos.</strong> Cree artículos, variante, código de barras, costo, precio e inventario inicial.</li>
+                    <li><strong>Prueba integral.</strong> Abra un turno de prueba, facture, cobre, consulte existencias y cierre el turno.</li>
+                </ol>
+
+                <div class="flow" aria-label="Flujo de preparación">
+                    <span>Licencia</span><i>→</i><span>Parámetros</span><i>→</i><span>Sucursal</span><i>→</i>
+                    <span>Bodega</span><i>→</i><span>Caja</span><i>→</i><span>Usuario</span><i>→</i>
+                    <span>Producto</span><i>→</i><span>Existencia</span><i>→</i><span>Venta de prueba</span>
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/01-inicio-dashboard.png" alt="Dashboard inicial de SAVI">
+                    <figcaption>Captura sugerida: dashboard después de iniciar sesión. Archivo: <code>images/01-inicio-dashboard.png</code>.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="configuracion-base">
+                <div class="section-heading">
+                    <span class="section-icon">⚙️</span>
+                    <div>
+                        <h2>Configuración básica de la compañía</h2>
+                        <p>Parámetros que afectan documentos, inventario, POS y apariencia.</p>
+                    </div>
+                </div>
+
+                <h3>Parámetros de compañía</h3>
+                <p>
+                    Ingrese desde <strong>Seguridad → Parámetros de compañía</strong>. Los parámetros visibles
+                    deben mantenerse con valores válidos; los parámetros protegidos de licencia no se editan aquí.
+                </p>
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h4>Identidad y documentos</h4>
+                        <ul>
+                            <li>Nombre comercial, razón social e identificación fiscal.</li>
+                            <li>Dirección, teléfonos, correo y textos de impresión.</li>
+                            <li>Series, formatos o preferencias de comprobante disponibles.</li>
+                        </ul>
+                    </article>
+                    <article class="info-card">
+                        <h4>Comportamiento operativo</h4>
+                        <ul>
+                            <li>Moneda predeterminada y tasa de cambio vigente.</li>
+                            <li>Restricción de venta cuando no hay existencia suficiente.</li>
+                            <li>Preferencias de impresión y operación del POS.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="callout danger">
+                    <strong>Parámetros protegidos</strong>
+                    <code>LICENCEID</code> y <code>REPORTKEY</code> no deben copiarse, mostrarse en capturas,
+                    consultarse desde pantallas genéricas ni registrarse en logs. Use exclusivamente
+                    <strong>Seguridad → Editar licencia</strong>.
+                </div>
+
+                <h3>Marca y estilo</h3>
+                <p>
+                    En <strong>Seguridad → Marca y estilo</strong> configure logotipo, nombre mostrado y
+                    elementos visuales. Utilice imágenes optimizadas y verifique el resultado en pantalla y documentos.
+                </p>
+
+                <h3>Tasa de cambio</h3>
+                <p>
+                    Mantenga la tasa vigente antes de registrar cobros o gastos en moneda extranjera.
+                    La tasa maestra registrada en <strong>Catálogos → Tasa de cambio</strong> tiene prioridad
+                    sobre la tasa de respaldo. La tasa es información operativa: debe revisarse cuando cambie
+                    el día o la política de la empresa.
+                </p>
+
+                <h3>Parámetros operativos que deben revisarse</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Parámetro</th><th>Efecto</th></tr></thead>
+                        <tbody>
+                            <tr><td><code>POS_REQUIRE_SUFFICIENT_STOCK</code></td><td>Impide cobrar cuando un producto simple o los componentes de un kit no tienen cantidad suficiente.</td></tr>
+                            <tr><td><code>PURCH_PO_AUTH_THRESHOLD</code></td><td>Define el umbral de autorización de órdenes. Con valor cero, toda orden requiere autorización.</td></tr>
+                            <tr><td><code>EXPENSES_AFFECT_BANK_BALANCE</code></td><td>Determina si gastos bancarios reducen el saldo de la cuenta configurada.</td></tr>
+                            <tr><td>Moneda y tasa de respaldo</td><td>Define moneda ISO local, símbolo y valor utilizado cuando no existe tasa maestra vigente.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/02-configuracion-parametros.png" alt="Pantalla de parámetros de compañía">
+                    <figcaption>Captura sugerida: parámetros generales sin mostrar datos sensibles.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="estructura-empresa">
+                <div class="section-heading">
+                    <span class="section-icon">🏢</span>
+                    <div>
+                        <h2>Sucursales, bodegas, cajas y terminales</h2>
+                        <p>La estructura organizativa determina dónde se vende, almacena y consulta información.</p>
+                    </div>
+                </div>
+
+                <h3>1. Regiones y ciudades</h3>
+                <p>
+                    Son catálogos geográficos usados por sucursales, clientes y proveedores. Normalmente llegan
+                    sembrados; agregue registros únicamente si la operación requiere nuevas ubicaciones.
+                </p>
+
+                <h3>2. Sucursales</h3>
+                <ol class="step-list">
+                    <li>Abra <strong>Catálogos → Generales → Sucursales</strong>.</li>
+                    <li>Registre código único, nombre, región, ciudad, dirección y estado activo.</li>
+                    <li>Confirme que los usuarios que operarán allí tengan asignada la sucursal.</li>
+                </ol>
+
+                <h3>3. Bodegas</h3>
+                <p>
+                    Cada bodega pertenece a una sucursal. Cree al menos una bodega para manejar existencias,
+                    compras, ajustes y traslados. No reutilice la misma bodega para ubicaciones físicas distintas.
+                </p>
+
+                <h3>4. Cajas registradoras y terminales</h3>
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h4>Caja registradora</h4>
+                        <p>Se vincula con una sucursal y una bodega. Define dónde se abre el turno y desde qué inventario factura el POS.</p>
+                    </article>
+                    <article class="info-card">
+                        <h4>Terminal POS</h4>
+                        <p>Representa el equipo o terminal de cobro. Configure los datos requeridos y mantenga activos únicamente los dispositivos utilizados.</p>
+                    </article>
+                </div>
+
+                <div class="callout info">
+                    <strong>Relación fundamental</strong>
+                    Sucursal → Bodega → Caja registradora → Turno. Una asociación incorrecta puede mostrar
+                    inventario de otra ubicación o impedir abrir el POS.
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/03-sucursales-bodegas-cajas.png" alt="Configuración de sucursales, bodegas y cajas">
+                    <figcaption>Captura sugerida: ejemplo de la relación entre sucursal, bodega y caja.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="seguridad-operativa">
+                <div class="section-heading">
+                    <span class="section-icon">🔐</span>
+                    <div>
+                        <h2>Usuarios, roles y asignaciones</h2>
+                        <p>El acceso efectivo combina rol, menú, permisos, alcance organizativo y licencia.</p>
+                    </div>
+                </div>
+
+                <h3>Crear un rol</h3>
+                <ol class="step-list">
+                    <li>Abra <strong>Seguridad → Roles</strong> y cree un rol con nombre descriptivo.</li>
+                    <li>Asigne solo los permisos necesarios para sus responsabilidades.</li>
+                    <li>Asigne las opciones de menú correspondientes; un permiso sin menú puede impedir llegar a la pantalla.</li>
+                    <li>Pruebe el rol con un usuario de prueba antes de usarlo en producción.</li>
+                </ol>
+
+                <h3>Crear un usuario</h3>
+                <ol class="step-list">
+                    <li>Registre nombre de usuario, nombre completo, credenciales y estado activo.</li>
+                    <li>Asigne uno o más roles según la política de la empresa.</li>
+                    <li>Asigne sucursales mediante la relación de usuario y sucursal.</li>
+                    <li>Asigne cajas registradoras cuando el usuario deba abrir o trabajar turnos.</li>
+                    <li>Inicie sesión con el usuario y confirme menú, sucursal, caja y acciones permitidas.</li>
+                </ol>
+
+                <div class="callout warning">
+                    <strong>Principio de menor privilegio</strong>
+                    No convierta a todos los usuarios en administradores. Separe operación de caja, supervisión,
+                    inventario, compras y seguridad. Las autorizaciones de supervisor deben quedar identificadas.
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/04-usuarios-roles.png" alt="Usuarios y roles de SAVI">
+                    <figcaption>Captura sugerida: rol con permisos y asignaciones organizativas.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="catalogos-productos">
+                <div class="section-heading">
+                    <span class="section-icon">🗂️</span>
+                    <div>
+                        <h2>Catálogos necesarios para productos</h2>
+                        <p>Prepare estos catálogos antes de crear artículos para evitar información inconsistente.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Catálogo</th><th>Finalidad</th><th>Recomendación</th></tr></thead>
+                        <tbody>
+                            <tr><td>Categorías y subcategorías</td><td>Clasificar productos, filtrar y analizar ventas.</td><td>Use una jerarquía corta y estable; no cree categorías duplicadas por ortografía.</td></tr>
+                            <tr><td>Marcas</td><td>Identificar fabricante o marca comercial.</td><td>Registre una sola forma del nombre y desactive en vez de duplicar.</td></tr>
+                            <tr><td>Modelos</td><td>Detallar líneas o modelos asociados a una marca.</td><td>Seleccione primero la marca correcta.</td></tr>
+                            <tr><td>Propiedades</td><td>Definir atributos de variantes como talla, color o presentación.</td><td>Cree opciones reutilizables y nombres comprensibles.</td></tr>
+                            <tr><td>Tipos de precio</td><td>Manejar precio regular, mayorista u otros niveles.</td><td>Defina cuál utilizará cada operación antes de cargar precios.</td></tr>
+                            <tr><td>Códigos de barra</td><td>Asociar uno o más códigos a una variante.</td><td>No repita un código en variantes diferentes.</td></tr>
+                            <tr><td>Unidad de medida</td><td>Expresar unidad, caja, libra u otra medida.</td><td>Utilice los catálogos sembrados y amplíelos solo cuando sea necesario.</td></tr>
+                            <tr><td>Impuesto</td><td>Determinar tratamiento fiscal del artículo.</td><td>Confirme con el responsable contable antes de asignarlo.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Orden práctico</h3>
+                <div class="flow">
+                    <span>Categoría</span><i>→</i><span>Marca</span><i>→</i><span>Modelo</span><i>→</i>
+                    <span>Propiedades</span><i>→</i><span>Tipo de precio</span><i>→</i><span>Producto</span>
+                </div>
+
+                <h3>Carga de catálogos e importación</h3>
+                <p>
+                    <strong>Seguridad → Carga de catálogos</strong> permite descargar una plantilla de referencia
+                    para categorías, subcategorías, marcas, modelos, proveedores, unidades, impuestos, tipos de
+                    precio y propiedades. Verifique la pantalla instalada antes de asumir que existe carga masiva
+                    automática para todas las hojas. La importación de productos desde <strong>Productos</strong>
+                    sí admite archivos <code>.xlsx</code> de hasta 500 filas y devuelve errores por fila.
+                </p>
+
+                <figure class="manual-shot">
+                    <img src="images/05-catalogos-producto.png" alt="Catálogos para crear productos">
+                    <figcaption>Captura sugerida: navegación de catálogos de producto.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="productos">
+                <div class="section-heading">
+                    <span class="section-icon">📦</span>
+                    <div>
+                        <h2>Productos, variantes, precios y códigos</h2>
+                        <p>El producto contiene la información comercial; la variante es la unidad realmente vendida y almacenada.</p>
+                    </div>
+                </div>
+
+                <h3>Crear un producto estándar</h3>
+                <ol class="step-list">
+                    <li>Abra <strong>Inventario → Productos → Catálogo</strong> y seleccione agregar.</li>
+                    <li>Ingrese código o referencia, nombre claro, descripción y clasificación.</li>
+                    <li>Seleccione categoría, marca, modelo, proveedor, unidad e impuesto cuando corresponda.</li>
+                    <li>Indique si controla existencia y si está disponible para venta.</li>
+                    <li>Configure la variante única o las variantes requeridas por propiedades.</li>
+                    <li>Ingrese SKU, código de barras, costo, precio base y precios adicionales.</li>
+                    <li>Agregue imágenes y seleccione una principal para mostrarla en el POS.</li>
+                    <li>Guarde y compruebe el producto desde Consulta de productos y desde el POS.</li>
+                </ol>
+
+                <div class="grid-3">
+                    <article class="info-card">
+                        <h4>SKU</h4>
+                        <p>Identificador interno de la variante. Debe ser único, estable y fácil de rastrear. El número de parte (<code>NoParte</code>) es opcional y también sirve para búsqueda.</p>
+                    </article>
+                    <article class="info-card">
+                        <h4>Código de barras</h4>
+                        <p>Valor escaneado en el POS y utilizado en etiquetas. Una variante puede manejar códigos adicionales.</p>
+                    </article>
+                    <article class="info-card">
+                        <h4>Costo y precio</h4>
+                        <p>El costo apoya valorización y margen; el precio determina la venta antes de promociones y descuentos.</p>
+                    </article>
+                </div>
+
+                <div class="callout warning">
+                    <strong>No corrija existencias editando el producto</strong>
+                    Utilice recepción, ajuste o traslado. Así el sistema conserva trazabilidad en el kardex.
+                </div>
+
+                <h3>Búsqueda de productos</h3>
+                <p>
+                    Los filtros por nombre deben aceptar diferencias de acentos. También puede buscar por SKU,
+                    código de barras, referencia, categoría o marca según la pantalla. Verifique el estado activo
+                    si un artículo no aparece.
+                </p>
+
+                <h3>Relaciones comerciales</h3>
+                <p>
+                    Después de guardar el producto puede vincular variantes relacionadas, sustitutas o
+                    complementarias/surtidas. Estas relaciones aparecen en el detalle del POS para orientar al
+                    cajero. No cree relaciones circulares sin sentido ni relacione una variante consigo misma.
+                </p>
+
+                <h3>Importar productos</h3>
+                <ol class="step-list">
+                    <li>Descargue la plantilla desde el catálogo de productos.</li>
+                    <li>Complete como máximo 500 filas respetando códigos y catálogos existentes.</li>
+                    <li>Importe el archivo <code>.xlsx</code> y revise el resultado de cada fila.</li>
+                    <li>Complete manualmente imágenes, relaciones y cualquier dato no incluido en la plantilla.</li>
+                </ol>
+
+                <figure class="manual-shot">
+                    <img src="images/06-producto-edicion.png" alt="Edición de un producto SAVI">
+                    <figcaption>Captura sugerida: producto con clasificación, variante, precio y código de barras.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="kits">
+                <div class="section-heading">
+                    <span class="section-icon">🧩</span>
+                    <div>
+                        <h2>Kits y productos compuestos</h2>
+                        <p>Un kit se vende como una unidad, pero consume las existencias de sus componentes.</p>
+                    </div>
+                </div>
+
+                <h3>Cómo crear un kit</h3>
+                <ol class="step-list">
+                    <li>Abra <strong>Inventario → Productos → Kits / productos compuestos</strong>.</li>
+                    <li>Complete los datos del producto base y el precio de venta.</li>
+                    <li>Agregue cada componente y la cantidad necesaria para armar una unidad del kit.</li>
+                    <li>Revise el costo calculado, precio, utilidad y margen estimado.</li>
+                    <li>Confirme la composición y guarde. El kit utiliza una sola variante comercial.</li>
+                    <li>Consulte el kit en el POS y abra el panel de componentes para validar disponibilidad.</li>
+                </ol>
+
+                <h3>Existencia disponible del kit</h3>
+                <p>
+                    La existencia no se guarda como stock independiente. Se calcula por el componente limitante:
+                    para cada componente se divide su existencia disponible entre la cantidad requerida y se toma
+                    el menor resultado entero. Si no puede armarse una unidad completa, el resultado es cero, nunca negativo.
+                </p>
+
+                <div class="callout danger">
+                    <strong>Venta con restricción de existencias</strong>
+                    Si está habilitado el parámetro que impide facturar sin existencia, el botón <strong>Cobrar</strong>
+                    valida todos los componentes antes de abrir la pantalla de pago. La venta solo continúa si existe
+                    cantidad suficiente para armar todos los kits solicitados.
+                </div>
+
+                <h3>Costo y trazabilidad</h3>
+                <p>
+                    Al vender, el sistema toma un snapshot de componentes y costo histórico. Esto permite que
+                    devoluciones y anulaciones reviertan los mismos componentes aunque la composición se modifique después.
+                </p>
+
+                <figure class="manual-shot">
+                    <img src="images/07-kit-composicion.png" alt="Composición y margen de un kit">
+                    <figcaption>Captura sugerida: composición, costo calculado y margen del kit.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="clientes-proveedores">
+                <div class="section-heading">
+                    <span class="section-icon">🤝</span>
+                    <div>
+                        <h2>Clientes, segmentos y proveedores</h2>
+                        <p>Maestros comerciales utilizados en facturación, crédito, compras y análisis.</p>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h3>Clientes</h3>
+                        <ul>
+                            <li>Registre código, nombre, identificación, contacto y ubicación.</li>
+                            <li>Asigne segmento para análisis y estrategias comerciales.</li>
+                            <li>Configure límite y condiciones de crédito solo con autorización.</li>
+                            <li>Consulte el <strong>panel de crédito</strong> del cliente para score, aging, facturas pendientes e historial de abonos.</li>
+                            <li>Mantenga un consumidor final para ventas no identificadas, si la política lo permite.</li>
+                        </ul>
+                    </article>
+                    <article class="info-card">
+                        <h3>Proveedores</h3>
+                        <ul>
+                            <li>Registre código, razón social, identificación y datos de contacto.</li>
+                            <li>Complete ubicación y estado activo.</li>
+                            <li>Utilice términos de pago y métodos de envío consistentes.</li>
+                            <li>Asocie proveedores a productos cuando facilite la reposición.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <h3>Panel de crédito del cliente</h3>
+                <p>
+                    Vista consolidada del comportamiento de pago: score, aging de saldos (0–30 / 31–60 / 61–90 / +90 días),
+                    mix contado vs crédito, facturas con saldo e historial de abonos. Ábralo desde el maestro de
+                    clientes, desde una factura con saldo pendiente o desde el POS al seleccionar el cliente
+                    (planes Completa, Profesional y Comercio).
+                </p>
+
+                <h3>Evitar duplicados</h3>
+                <p>
+                    Antes de crear, busque por identificación, código y nombre sin depender de acentos.
+                    Desactive registros obsoletos cuando ya tengan movimientos; no los elimine físicamente.
+                </p>
+            </section>
+
+            <section class="manual-section" id="inventario">
+                <div class="section-heading">
+                    <span class="section-icon">🏷️</span>
+                    <div>
+                        <h2>Inventario y almacén</h2>
+                        <p>Ajustes, traslados, consulta de existencias y trazabilidad.</p>
+                    </div>
+                </div>
+
+                <h3>Consulta de productos</h3>
+                <p>
+                    Use <strong>Almacén → Consulta productos</strong> para revisar existencia por bodega,
+                    costo, precio, estado y datos relacionados. Esta pantalla es de consulta; las correcciones
+                    se hacen mediante documentos de inventario.
+                </p>
+
+                <h3>Ajustes</h3>
+                <ol class="step-list">
+                    <li>Seleccione sucursal, bodega y razón de ajuste.</li>
+                    <li>Agregue productos y cantidades de entrada o salida.</li>
+                    <li>Escriba una nota que explique el origen de la diferencia.</li>
+                    <li>Revise, solicite autorización cuando corresponda y complete el ajuste.</li>
+                    <li>Confirme el movimiento en existencias y kardex.</li>
+                </ol>
+
+                <h3>Traslados entre bodegas</h3>
+                <ol class="step-list">
+                    <li>Seleccione bodega origen y destino; deben ser diferentes.</li>
+                    <li>Agregue variantes y cantidades.</li>
+                    <li>Revise disponibilidad en origen.</li>
+                    <li>Procese la autorización y complete el traslado.</li>
+                    <li>Compruebe la salida en origen y entrada en destino.</li>
+                </ol>
+
+                <div class="callout warning">
+                    <strong>Documentos pendientes</strong>
+                    Un borrador o solicitud pendiente no debe interpretarse como movimiento completado.
+                    Revise el estado antes de conciliar existencias.
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/08-ajuste-inventario.png" alt="Ajuste de inventario">
+                    <figcaption>Captura sugerida: ajuste con razón, bodega, productos y estado.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="compras">
+                <div class="section-heading">
+                    <span class="section-icon">🚚</span>
+                    <div>
+                        <h2>Compras, cotizaciones y recepciones</h2>
+                        <p>Proceso de abastecimiento desde la solicitud al ingreso físico.</p>
+                    </div>
+                </div>
+
+                <h3>Catálogos previos</h3>
+                <ul class="checklist">
+                    <li>Proveedor activo y correctamente identificado.</li>
+                    <li>Término de pago y método de envío.</li>
+                    <li>Productos con variante, costo y unidad adecuados.</li>
+                    <li>Sucursal y bodega de recepción.</li>
+                </ul>
+
+                <h3>Flujo recomendado</h3>
+                <div class="flow">
+                    <span>Cotización de proveedor</span><i>→</i><span>Orden de compra</span><i>→</i>
+                    <span>Autorización</span><i>→</i><span>Recepción</span><i>→</i><span>Existencia y kardex</span>
+                </div>
+
+                <ol class="step-list">
+                    <li>Cree una cotización cuando deba comparar condiciones o precios.</li>
+                    <li>Genere la orden con proveedor, bodega, moneda, fechas, productos y cantidades.</li>
+                    <li>Revise costos, impuestos, totales, término de pago y envío.</li>
+                    <li>Autorice la orden conforme al rol y procedimiento interno.</li>
+                    <li>Al recibir, registre únicamente cantidades físicamente verificadas.</li>
+                    <li>Confirme la recepción para que actualice inventario y costo según las reglas del sistema.</li>
+                </ol>
+
+                <div class="callout info">
+                    <strong>Recepción parcial</strong>
+                    Una orden puede conservar cantidades pendientes. Use el reporte de órdenes y recepciones
+                    para comparar solicitado, recibido y pendiente.
+                </div>
+
+                <h3>Estados que debe distinguir</h3>
+                <p>
+                    Una cotización no afecta inventario. Una orden en borrador o pendiente tampoco. Una recepción
+                    guardada como borrador no incrementa stock: el movimiento se materializa al confirmarla.
+                    Las órdenes pueden avanzar por borrador, pendiente, autorizada, parcial, cerrada o anulada.
+                </p>
+
+                <figure class="manual-shot">
+                    <img src="images/09-orden-compra.png" alt="Orden de compra SAVI">
+                    <figcaption>Captura sugerida: orden con proveedor, bodega, líneas, costos y estado.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="precios-promociones">
+                <div class="section-heading">
+                    <span class="section-icon">💲</span>
+                    <div>
+                        <h2>Precios, promociones y reglas de descuento</h2>
+                        <p>Herramientas comerciales que modifican el importe sin perder control ni trazabilidad.</p>
+                    </div>
+                </div>
+
+                <h3>Hojas de precio</h3>
+                <p>
+                    Utilice hojas de trabajo para preparar cambios de precio antes de activarlos. Revise vigencia,
+                    estado, productos afectados y auditoría. No mezcle cambios sin relación en una misma hoja.
+                </p>
+
+                <h3>Descuentos y regalías</h3>
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h4>Descuento</h4>
+                        <p>Reduce precio o importe según alcance, condición y vigencia. Verifique topes y prioridad cuando coincidan varias reglas.</p>
+                    </article>
+                    <article class="info-card">
+                        <h4>Regalía</h4>
+                        <p>Entrega una cantidad o producto de beneficio cuando se cumple la condición configurada.</p>
+                    </article>
+                </div>
+
+                <h3>Reglas de descuento y autorización</h3>
+                <p>
+                    Las reglas de seguridad pueden limitar el descuento manual y exigir supervisor.
+                    El POS registra quién solicitó y quién autorizó. Nunca comparta credenciales para aprobar.
+                </p>
+
+                <ul class="checklist">
+                    <li>Defina fechas y horas de vigencia.</li>
+                    <li>Confirme sucursales, productos o categorías incluidas.</li>
+                    <li>Pruebe casos dentro y fuera de la condición.</li>
+                    <li>Revise margen y costo antes de activar.</li>
+                    <li>Desactive promociones vencidas o reemplazadas.</li>
+                </ul>
+
+                <figure class="manual-shot">
+                    <img src="images/10-promociones.png" alt="Configuración de promociones SAVI">
+                    <figcaption>Captura sugerida: promoción con vigencia, alcance, condición y beneficio.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="pos-preparacion">
+                <div class="section-heading">
+                    <span class="section-icon">🧾</span>
+                    <div>
+                        <h2>Preparar el Punto de Venta</h2>
+                        <p>Requisitos y apertura correcta antes de facturar.</p>
+                    </div>
+                </div>
+
+                <h3>Requisitos del cajero</h3>
+                <ul class="checklist">
+                    <li>Usuario activo con permiso para POS.</li>
+                    <li>Sucursal y caja registradora asignadas.</li>
+                    <li>Caja vinculada a la bodega correcta.</li>
+                    <li>Formas de pago, denominaciones y terminales configuradas.</li>
+                    <li>Tasa de cambio vigente si se reciben monedas extranjeras.</li>
+                    <li>Productos activos, con precio y código de barras.</li>
+                    <li>Si usará la app <strong>SAVI Escáner</strong>, el dispositivo debe estar autorizado y vinculado a usuario y caja.</li>
+                </ul>
+
+                <h3>Apertura del turno</h3>
+                <ol class="step-list">
+                    <li>Abra <strong>Facturación → Punto de Venta</strong>.</li>
+                    <li>Seleccione o confirme la caja asignada.</li>
+                    <li>Ingrese fondo inicial y conteo por denominaciones si está habilitado.</li>
+                    <li>Solicite autorización de supervisor si la configuración lo exige.</li>
+                    <li>Confirme la apertura y verifique que el POS muestre el turno activo.</li>
+                </ol>
+
+                <div class="callout danger">
+                    <strong>Un turno por operación</strong>
+                    No utilice credenciales de otro cajero ni continúe con una caja o turno incorrectos.
+                    Las ventas, pagos, movimientos y cierre quedan vinculados al turno.
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/11-pos-apertura.png" alt="Apertura de turno POS">
+                    <figcaption>Captura sugerida: apertura con fondo, denominaciones y autorización.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="pos-venta">
+                <div class="section-heading">
+                    <span class="section-icon">🛒</span>
+                    <div>
+                        <h2>Registrar una venta en el POS</h2>
+                        <p>Desde la búsqueda del producto hasta la validación previa al cobro.</p>
+                    </div>
+                </div>
+
+                <h3>Agregar artículos</h3>
+                <ol class="step-list">
+                    <li>Escanee el código de barras o busque por descripción, SKU, número de parte o referencia.</li>
+                    <li>Seleccione el resultado correcto y agréguelo al carrito.</li>
+                    <li>Use los controles más y menos para modificar cantidad.</li>
+                    <li>Abra el icono de información para consultar precio, existencia, relacionados, surtidos y sustitutos.</li>
+                    <li>En kits, despliegue el panel de componentes y revise la disponibilidad calculada.</li>
+                    <li>También puede recibir códigos en tiempo real desde la app SAVI Escáner (envío directo o lote desde su carrito local).</li>
+                </ol>
+
+                <h3>Cliente y tipo de venta</h3>
+                <p>
+                    Seleccione el cliente antes del cobro cuando la factura deba identificarlo o sea a crédito.
+                    Revise límite, saldo y condición de crédito. Para venta de contado sin identificación utilice
+                    el cliente genérico definido por la empresa.
+                </p>
+
+                <h3>Descuentos y promociones</h3>
+                <p>
+                    Las promociones vigentes se calculan según sus reglas. Un descuento manual puede estar limitado
+                    por porcentaje o requerir autorización. Compruebe el importe final y el motivo antes de continuar.
+                </p>
+
+                <h3>Botón Cobrar</h3>
+                <p>
+                    Al pulsarlo, el sistema valida el carrito antes de mostrar formas de pago. Si la empresa restringe
+                    ventas sin existencia, valida artículos normales y todos los componentes de kits. Corrija cantidades
+                    o reponga inventario cuando se muestre un faltante.
+                </p>
+
+                <div class="grid-2">
+                    <figure class="manual-shot">
+                        <img src="images/12-pos-busqueda-carrito.png" alt="Búsqueda y carrito POS">
+                        <figcaption>Búsqueda, selección y cantidades del carrito.</figcaption>
+                    </figure>
+                    <figure class="manual-shot">
+                        <img src="images/13-pos-detalle-producto.png" alt="Detalle del producto POS">
+                        <figcaption>Detalle, relaciones y componentes de kit.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="manual-section" id="pos-cobro">
+                <div class="section-heading">
+                    <span class="section-icon">💳</span>
+                    <div>
+                        <h2>Cobro, formas de pago y crédito</h2>
+                        <p>Complete el pago con importes verificables y sin duplicar registros.</p>
+                    </div>
+                </div>
+
+                <h3>Agregar pagos</h3>
+                <ol class="step-list">
+                    <li>Seleccione forma de pago y moneda.</li>
+                    <li>Ingrese el monto o use <strong>Exacto</strong> para completar el saldo.</li>
+                    <li>Registre referencia, banco, terminal o voucher cuando corresponda.</li>
+                    <li>Pulse el botón de agregar pago y verifique la lista acumulada.</li>
+                    <li>Combine formas de pago si el cliente utiliza pago mixto.</li>
+                    <li>Confirme únicamente cuando el total aplicado cubra el importe requerido.</li>
+                </ol>
+
+                <h3>Venta a crédito</h3>
+                <p>
+                    Requiere cliente identificado y autorización conforme a límites y permisos. El saldo queda en
+                    cartera y se refleja en el panel de crédito y reporte de antigüedad.
+                </p>
+
+                <h3>Panel de crédito del cliente</h3>
+                <p>
+                    Antes de cobrar a crédito o al dar seguimiento a un cliente, abra el panel de crédito para ver
+                    score de pago, aging de saldos, mix contado/crédito, facturas pendientes e historial de abonos.
+                    Desde ahí también puede iniciar un abono. El acceso está disponible en planes Completa,
+                    Profesional y Comercio.
+                </p>
+
+                <h3>Pagos y abonos posteriores</h3>
+                <ol class="step-list">
+                    <li>Abra <strong>Pagos / Abonos</strong> desde el POS o el panel de crédito.</li>
+                    <li>Busque por cliente, fechas o número de factura.</li>
+                    <li>Seleccione una factura con saldo pendiente.</li>
+                    <li>Agregue una o varias formas de pago y revise el saldo resultante.</li>
+                    <li>Confirme e imprima el recibo. El abono nunca debe superar el saldo.</li>
+                </ol>
+
+                <h3>Antes de finalizar</h3>
+                <ul class="checklist">
+                    <li>Cliente y tipo de venta correctos.</li>
+                    <li>Artículos, cantidades, precios y descuentos revisados.</li>
+                    <li>Forma de pago y moneda coinciden con lo recibido.</li>
+                    <li>Referencias y vouchers capturados.</li>
+                    <li>Cambio a entregar confirmado.</li>
+                </ul>
+
+                <figure class="manual-shot">
+                    <img src="images/14-pos-cobro.png" alt="Modal de cobro POS">
+                    <figcaption>Captura sugerida: grupo Exacto/Agregar, formas de pago y saldo.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="pos-posterior">
+                <div class="section-heading">
+                    <span class="section-icon">↩️</span>
+                    <div>
+                        <h2>Facturas, devoluciones y anulaciones</h2>
+                        <p>Operaciones posteriores que deben conservar la trazabilidad original.</p>
+                    </div>
+                </div>
+
+                <h3>Facturas en espera</h3>
+                <p>
+                    Use la función de estacionar o dejar en espera cuando la venta deba retomarse. Al recuperarla,
+                    verifique nuevamente cliente, precios, promociones, existencia y turno.
+                </p>
+
+                <h3>Cotizaciones de venta</h3>
+                <p>
+                    Una cotización no descuenta inventario ni congela necesariamente precios. Puede crearla desde el
+                    carrito del POS o desde la app <strong>SAVI Escáner</strong> (modo carrito local → Crear cotización).
+                    El documento queda listado en cotizaciones (número <code>COT-…</code>) y puede recuperarse en el POS
+                    para convertirlo en factura. Al cargarla se revalidan vigencia, artículos, precios, promociones y
+                    existencias. Cuando se convierte queda marcada para evitar reutilización. Las cotizaciones
+                    anuladas o ya convertidas no deben cargarse nuevamente. Requiere licencia de cotizaciones
+                    (Completa, Profesional, Comercio) y, en la app, un usuario asignado al dispositivo.
+                </p>
+
+                <h3>Devolución</h3>
+                <ol class="step-list">
+                    <li>Localice la factura original.</li>
+                    <li>Seleccione las líneas y cantidades realmente devueltas.</li>
+                    <li>Registre tipo, motivo y forma de reembolso o reducción de crédito.</li>
+                    <li>Solicite autorización cuando aplique.</li>
+                    <li>Confirme y compruebe el retorno de inventario.</li>
+                </ol>
+
+                <h3>Anulación</h3>
+                <p>
+                    Anule solo cuando el documento deba quedar sin efecto completo. Registre una explicación y
+                    autorización. El sistema revierte inventario y movimientos relacionados de acuerdo con la
+                    venta original; en kits utiliza el snapshot histórico de componentes.
+                </p>
+
+                <div class="callout warning">
+                    <strong>Devolución no es anulación</strong>
+                    Use devolución para mercancía que retorna total o parcialmente. Use anulación cuando el documento
+                    completo fue emitido incorrectamente y la política permite dejarlo sin efecto.
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/16-devoluciones.png" alt="Proceso de devolución">
+                    <figcaption>Captura sugerida: selección de factura, líneas, motivo y autorización.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="caja-gastos">
+                <div class="section-heading">
+                    <span class="section-icon">💵</span>
+                    <div>
+                        <h2>Caja, movimientos, gastos y cierre</h2>
+                        <p>Control del efectivo y conciliación de cada turno.</p>
+                    </div>
+                </div>
+
+                <h3>Movimientos de caja</h3>
+                <p>
+                    Registre entradas y salidas distintas de pagos normales usando el concepto correcto, moneda,
+                    referencia y nota. Los movimientos anulados conservan auditoría y no aportan al flujo neto.
+                </p>
+
+                <p>
+                    El fondo <strong>Caja de turno</strong> afecta el arqueo. <strong>Caja chica</strong> mantiene
+                    un saldo persistente por caja. Una dotación mueve fondos del turno a caja chica y un reintegro
+                    realiza el movimiento inverso; el sistema conserva movimientos enlazados.
+                </p>
+
+                <h3>Gastos</h3>
+                <p>
+                    Antes de registrar, configure tipos de gasto, beneficiarios y orígenes. Seleccione sucursal,
+                    caja o cuenta bancaria, moneda, monto, número de documento y soporte. No use un gasto para
+                    sustituir una compra de inventario.
+                </p>
+
+                <h3>Cierre de turno</h3>
+                <ol class="step-list">
+                    <li>Termine cobros pendientes y verifique facturas en espera.</li>
+                    <li>Cuente efectivo por moneda y denominación.</li>
+                    <li>Registre totales de terminales de tarjeta.</li>
+                    <li>Ingrese notas y solicite autorización si corresponde.</li>
+                    <li>Compare monto contado contra monto del sistema.</li>
+                    <li>Explique diferencias y complete el cierre.</li>
+                    <li>Use el reporte de cierres y diferencias para la conciliación administrativa.</li>
+                </ol>
+
+                <div class="grid-2">
+                    <figure class="manual-shot">
+                        <img src="images/17-gastos-caja.png" alt="Gastos y movimientos de caja">
+                        <figcaption>Gastos, conceptos y origen de fondos.</figcaption>
+                    </figure>
+                    <figure class="manual-shot">
+                        <img src="images/15-pos-cierre.png" alt="Cierre de turno POS">
+                        <figcaption>Conteos, sistema y diferencia del cierre.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="manual-section" id="reportes">
+                <div class="section-heading">
+                    <span class="section-icon">📊</span>
+                    <div>
+                        <h2>Uso del motor de reportes</h2>
+                        <p>Filtros, tabla, gráficos, KPIs, información y diseño personalizado.</p>
+                    </div>
+                </div>
+
+                <h3>Ejecutar un reporte</h3>
+                <ol class="step-list">
+                    <li>Abra una opción bajo el encabezado <strong>Reportes</strong>.</li>
+                    <li>Lea <strong>Información del reporte</strong> para conocer finalidad e interpretación.</li>
+                    <li>Seleccione fechas y catálogos desde los desplegables; los filtros respetan las sucursales asignadas.</li>
+                    <li>Pulse <strong>Obtener</strong> y espere la carga.</li>
+                    <li>Alterne entre tabla, gráficos o ambos según su nivel de licencia.</li>
+                    <li>Exporte cuando la función esté habilitada y el resultado haya sido revisado.</li>
+                </ol>
+
+                <h3>Catálogo de reportes</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>ID</th><th>Reporte</th><th>Uso principal</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td>Resumen ejecutivo de ventas</td><td>Venta neta, facturas, descuentos, devoluciones y ticket.</td></tr>
+                            <tr><td>2</td><td>Ventas y margen por producto</td><td>Unidades, costo histórico, utilidad y margen.</td></tr>
+                            <tr><td>3</td><td>Ventas por cliente y segmento</td><td>Frecuencia, importe y comportamiento de compra.</td></tr>
+                            <tr><td>4</td><td>Formas de pago y monedas</td><td>Composición de cobros y conciliación.</td></tr>
+                            <tr><td>5</td><td>Cartera de crédito y antigüedad</td><td>Saldos pendientes y prioridad de cobro.</td></tr>
+                            <tr><td>6</td><td>Devoluciones</td><td>Productos, motivos, importes y autorizadores.</td></tr>
+                            <tr><td>7</td><td>Facturas anuladas</td><td>Control de anulaciones por caja y usuario.</td></tr>
+                            <tr><td>8</td><td>Existencias y valorización</td><td>Disponibilidad, mínimos y valor de inventario.</td></tr>
+                            <tr><td>9</td><td>Kardex de inventario</td><td>Trazabilidad de entradas, salidas, costos y saldo.</td></tr>
+                            <tr><td>10</td><td>Ajustes y traslados</td><td>Operaciones, estados, razones y responsables.</td></tr>
+                            <tr><td>11</td><td>Rendimiento de kits</td><td>Venta, costo de componentes, utilidad y margen.</td></tr>
+                            <tr><td>12</td><td>Análisis de gastos</td><td>Gastos por tipo, beneficiario, origen y estado.</td></tr>
+                            <tr><td>13</td><td>Cierres y diferencias de caja</td><td>Conteo, sistema y diferencias por turno.</td></tr>
+                            <tr><td>14</td><td>Movimientos y flujo de caja</td><td>Entradas, salidas, conceptos y flujo neto.</td></tr>
+                            <tr><td>15</td><td>Órdenes y recepciones de compra</td><td>Solicitado, recibido, pendiente y cumplimiento.</td></tr>
+                            <tr><td>16</td><td>Promociones y descuentos</td><td>Impacto en venta, descuento y rentabilidad.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Diseño personal</h3>
+                <p>
+                    Usuarios habilitados pueden mostrar u ocultar columnas, cambiar alias, formatos, agrupaciones,
+                    gráficos, KPIs, reglas y paleta. El diseño se guarda localmente por ID y GUID del reporte.
+                    Use restaurar diseño predeterminado si una configuración importada produce resultados confusos.
+                </p>
+
+                <figure class="manual-shot">
+                    <img src="images/18-reportes.png" alt="Visor dinámico de reportes">
+                    <figcaption>Captura sugerida: filtros, botón Información, tabla, KPIs y gráficos.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="etiquetas">
+                <div class="section-heading">
+                    <span class="section-icon">🏷</span>
+                    <div>
+                        <h2>Generador web de etiquetas</h2>
+                        <p>Selección de productos, plantilla, cantidad y envío a impresión.</p>
+                    </div>
+                </div>
+
+                <ol class="step-list">
+                    <li>Abra <strong>Inventario → Productos → Etiquetas → Impresión de etiquetas</strong>. Se abre en una pestaña nueva.</li>
+                    <li>Busque por código, nombre o deje el filtro vacío si desea cargar todo el catálogo.</li>
+                    <li>Agregue los productos deseados al panel de selección.</li>
+                    <li>Use los botones más y menos para definir cuántas etiquetas imprimir.</li>
+                    <li>Seleccione ancho, alto, tipo de código de barras y plantilla.</li>
+                    <li>Revise la vista previa y guarde la plantilla preferida.</li>
+                    <li>Pulse imprimir todo, seleccione impresora y confirme tamaño real sin escalado.</li>
+                </ol>
+
+                <div class="callout info">
+                    <strong>Preferencia local</strong>
+                    La plantilla seleccionada se conserva en el almacenamiento local del navegador. Otro equipo
+                    o navegador puede tener una preferencia diferente.
+                </div>
+
+                <div class="callout warning">
+                    <strong>Configuración de impresora</strong>
+                    Use escala 100 %, márgenes en cero y el mismo ancho/alto configurado. Una escala automática
+                    puede recortar el código de barras o alterar su lectura.
+                </div>
+
+                <figure class="manual-shot">
+                    <img src="images/19-etiquetas.png" alt="Generador de etiquetas">
+                    <figcaption>Captura sugerida: búsqueda, seleccionados, cantidades, plantilla y vista previa.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section" id="app-escaner">
+                <div class="section-heading">
+                    <span class="section-icon">📱</span>
+                    <div>
+                        <h2>App móvil SAVI Escáner</h2>
+                        <p>Consulta de piso, pistola hacia la caja, carrito local y cotizaciones desde el teléfono.</p>
+                    </div>
+                </div>
+
+                <p>
+                    La app <strong>SAVI Escáner</strong> (<code>SAV_BarcodeScanner</code>) complementa el POS en el
+                    piso de venta. El dispositivo debe registrarse en Seguridad, autorizarse y vincularse a un
+                    usuario y a una caja (o privilegio FullAdmin multi-caja).
+                </p>
+
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h3>Envío directo al POS</h3>
+                        <p>
+                            Con el interruptor en modo directo, cada código leído se envía de inmediato a la caja
+                            abierta y el POS lo agrega al carrito como una pistola de código de barras.
+                        </p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Carrito local</h3>
+                        <p>
+                            Con el modo carrito activo, la app valida cada producto, acumula cantidades y muestra
+                            subtotal, IVA y total antes de decidir si envía el lote al POS o crea una cotización.
+                        </p>
+                    </article>
+                </div>
+
+                <h3>Crear cotización desde la app</h3>
+                <ol class="step-list">
+                    <li>Active el modo carrito local e escanee los productos deseados.</li>
+                    <li>Revise cantidades y totales en el carrito.</li>
+                    <li>Pulse <strong>Crear cotización</strong>. El servidor genera un documento <code>COT-…</code>.</li>
+                    <li>En el POS, cargue la cotización desde el módulo de cotizaciones o la función de recuperación y conviértala en factura tras revalidar precios y existencias.</li>
+                </ol>
+
+                <div class="callout warning">
+                    <strong>Licencia y usuario</strong>
+                    Cotizar desde la app requiere capacidad de cotizaciones de venta en la licencia y un usuario
+                    asignado al dispositivo. Sin eso, use el envío al POS o cree la cotización desde el carrito web.
+                </div>
+
+                <h3>Consulta y supervisión</h3>
+                <ul>
+                    <li><strong>Consulta de producto:</strong> existencia, precio base, listas, promociones, regalías y número de parte sin interrumpir el cobro en mostrador.</li>
+                    <li><strong>Panel de caja en vivo:</strong> estado del turno, saldos, flujo, gastos, pagos y picos de venta.</li>
+                    <li><strong>Cambio de caja:</strong> disponible para perfiles con supervisión multi-caja.</li>
+                </ul>
+            </section>
+
+            <section class="manual-section" id="rutinas">
+                <div class="section-heading">
+                    <span class="section-icon">✅</span>
+                    <div>
+                        <h2>Rutinas recomendadas</h2>
+                        <p>Controles diarios, semanales y mensuales para una operación confiable.</p>
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <article class="info-card">
+                        <h3>Diario</h3>
+                        <ul class="checklist">
+                            <li>Confirmar tasa de cambio.</li>
+                            <li>Abrir turnos con fondo contado.</li>
+                            <li>Registrar gastos y retiros oportunamente.</li>
+                            <li>Cerrar y conciliar cada caja.</li>
+                            <li>Revisar facturas anuladas y diferencias.</li>
+                        </ul>
+                    </article>
+                    <article class="info-card">
+                        <h3>Semanal</h3>
+                        <ul class="checklist">
+                            <li>Revisar existencias bajas o negativas.</li>
+                            <li>Dar seguimiento a órdenes pendientes.</li>
+                            <li>Revisar cartera vencida.</li>
+                            <li>Auditar descuentos y devoluciones.</li>
+                            <li>Confirmar usuarios activos.</li>
+                        </ul>
+                    </article>
+                    <article class="info-card">
+                        <h3>Mensual</h3>
+                        <ul class="checklist">
+                            <li>Verificar respaldo restaurable.</li>
+                            <li>Conciliar inventario físico.</li>
+                            <li>Revisar rentabilidad y promociones.</li>
+                            <li>Revalidar roles y permisos.</li>
+                            <li>Archivar reportes de control.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="manual-section" id="problemas">
+                <div class="section-heading">
+                    <span class="section-icon">🛠️</span>
+                    <div>
+                        <h2>Solución de problemas frecuentes</h2>
+                        <p>Comprobaciones seguras antes de solicitar soporte.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Situación</th><th>Qué revisar</th></tr></thead>
+                        <tbody>
+                            <tr><td>No aparece una opción de menú</td><td>Rol, RoleMenu, permiso funcional, licencia, sucursal asignada y nueva sesión después de cambios.</td></tr>
+                            <tr><td>Producto no aparece en POS</td><td>Estado activo, variante, precio, código, bodega/caja, filtro y disponibilidad según política.</td></tr>
+                            <tr><td>El kit muestra cero</td><td>Existencia y cantidad requerida de cada componente en la bodega de la caja.</td></tr>
+                            <tr><td>No permite cobrar</td><td>Turno activo, inventario, componentes de kit, cliente/crédito, descuentos y permisos.</td></tr>
+                            <tr><td>Catálogo desplegable vacío</td><td>Registros activos, asignación de sucursal, permisos y respuesta del servicio de catálogos.</td></tr>
+                            <tr><td>Reporte responde 403</td><td>Licencia principal vigente, REPORTKEY válido con ese ID y menú del rol.</td></tr>
+                            <tr><td>Reporte sin datos</td><td>Fechas, filtros, sucursales del usuario, estado de documentos y existencia de operaciones.</td></tr>
+                            <tr><td>Etiqueta recortada</td><td>Tamaño en milímetros, márgenes, escala 100 %, orientación y controlador de impresora.</td></tr>
+                            <tr><td>La app no envía al POS</td><td>Dispositivo autorizado, vinculado a caja, turno abierto en esa caja, URL del API y red alcanzable.</td></tr>
+                            <tr><td>No permite cotizar desde la app</td><td>Licencia con cotizaciones de venta, usuario asignado al dispositivo y carrito local con al menos un ítem.</td></tr>
+                            <tr><td>La sesión cambió después de licencia</td><td>Es esperado: actualizar licencia invalida sesiones y obliga a reconstruir capacidades y menú.</td></tr>
+                            <tr><td>Caracteres incorrectos</td><td>Codificación UTF-8, collation y datos originales; no corrija masivamente sin respaldo.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout danger">
+                    <strong>No improvise correcciones SQL en producción</strong>
+                    Capture mensaje, usuario, fecha, pantalla y pasos. Realice respaldo y reproduzca en una copia.
+                    Evite actualizar stock, ventas, pagos o licencias directamente.
+                </div>
+            </section>
+
+            <section class="manual-section technical" id="arquitectura">
+                <div class="section-heading">
+                    <span class="section-icon">🧱</span>
+                    <div>
+                        <h2>Sección técnica: arquitectura interna</h2>
+                        <p>Referencia avanzada para soporte, implementación y desarrollo.</p>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h3>SAV_Web</h3>
+                        <p>Aplicación ASP.NET Core MVC. Renderiza vistas Razor, conserva la sesión local, aplica política visual de licencia y actúa como proxy de consultas hacia el API.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>SAV_Api</h3>
+                        <p>API autorizada por JWT. Ejecuta servicios, cuotas, licencias, consultas SQL y endpoints dedicados como etiquetas y edición segura de licencia.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>SAV_Domain</h3>
+                        <p>Contratos, DTO y modelos compartidos, incluidas capacidades, estados de licencia y solicitudes seguras.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Cryptografia</h3>
+                        <p>Valida la licencia principal y la licencia de reportes. El sistema usa compatibilidad reflexiva cuando existen distintas firmas de DLL.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>SQL Server</h3>
+                        <p>Conserva configuración, maestros, transacciones, inventario, seguridad y reportes. Procedimientos encapsulan operaciones críticas.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>EtiquetasWeb</h3>
+                        <p>SPA independiente en HTML, CSS y JavaScript. Consume endpoints autorizados y genera impresión mediante iframe y JsBarcode.</p>
+                    </article>
+                </div>
+
+                <h3>Plataforma y versiones</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Proyecto o componente</th><th>Plataforma objetivo</th><th>Detalle</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>SAV_Web</td><td>.NET 8.0 (<code>net8.0</code>)</td><td>Aplicación ASP.NET Core MVC.</td></tr>
+                            <tr><td>SAV_Api</td><td>.NET 8.0 (<code>net8.0</code>)</td><td>API ASP.NET Core.</td></tr>
+                            <tr><td>SAV_Domain</td><td>.NET 8.0 (<code>net8.0</code>)</td><td>Biblioteca compartida de contratos y modelos.</td></tr>
+                            <tr>
+                                <td>SAV_BarcodeScanner</td>
+                                <td>.NET MAUI 8.0</td>
+                                <td>
+                                    Destinos <code>net8.0-android</code>, <code>net8.0-ios</code>,
+                                    <code>net8.0-maccatalyst</code> y, en Windows,
+                                    <code>net8.0-windows10.0.19041.0</code>.
+                                </td>
+                            </tr>
+                            <tr><td>CatalogSeedGen</td><td>.NET 8.0 (<code>net8.0</code>)</td><td>Utilidad interna para generación de catálogos.</td></tr>
+                            <tr><td>EtiquetasWeb</td><td>HTML5 y JavaScript ES6+</td><td>SPA estática sin runtime .NET ni proceso de compilación.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout info">
+                    <strong>Motor de base de datos documentado:</strong>
+                    Microsoft SQL Server 2022 RTM, versión <code>16.0.1000.6</code> (X64),
+                    Developer Edition de 64 bits, ejecutado sobre Windows 10 Pro
+                    <code>10.0</code>, compilación <code>26200</code>, con Hypervisor.
+                    La compilación de SQL Server está fechada el 8 de octubre de 2022 a las 05:58:25.
+                </div>
+
+                <h3>Flujo de una consulta genérica</h3>
+                <div class="flow">
+                    <span>Navegador</span><i>→</i><span>SAV_Web /Facturacion/POS/Query</span><i>→</i>
+                    <span>SAV_Api GenericController</span><i>→</i><span>Autorización/licencia</span><i>→</i>
+                    <span>util.DataQuery</span><i>→</i><span>SQLService</span><i>→</i><span>SQL Server</span>
+                </div>
+
+                <p>
+                    El navegador no debe enviar SQL. Envía un <code>QueryId</code> y parámetros. El API obtiene la
+                    definición permitida desde <code>util.DataQuery</code>, agrega el usuario cuando corresponde y
+                    ejecuta la consulta. Las funciones sensibles usan endpoints o procedimientos dedicados.
+                </p>
+
+                <h3>Cliente móvil (SAVI Escáner)</h3>
+                <p>
+                    El proyecto <code>SAV_BarcodeScanner</code> (nombre comercial <strong>SAVI Escáner</strong>) es un
+                    cliente .NET MAUI adicional. Los dispositivos y solicitudes de registro se administran desde
+                    Seguridad; no forman parte del flujo MVC principal y deben autorizarse antes de asociarlos con
+                    usuarios o cajas.
+                </p>
+                <ul>
+                    <li><strong>Scan directo:</strong> endpoint de envío de código hacia la caja destino (pistola).</li>
+                    <li><strong>Carrito local:</strong> validación de productos y precios en el dispositivo; envío de lote al POS.</li>
+                    <li><strong>Cotización:</strong> <code>POST /scan/quotation</code> crea una cotización de venta vía el mismo flujo del POS (<code>sales.sp_PosSaveSalesQuotation</code>), sujeta a licencia <code>SalesQuotations</code> y <code>AssignedUserId</code>.</li>
+                    <li><strong>Lookup y dashboard:</strong> consulta de ficha/existencia y panel de turno en vivo.</li>
+                </ul>
+
+                <h3>Autenticación y sesión</h3>
+                <ul>
+                    <li>El API autentica solicitudes mediante JWT con identidad y permisos.</li>
+                    <li>Web mantiene autenticación por cookie y conserva de forma segura el token necesario para el proxy.</li>
+                    <li>El menú y las capacidades se construyen al iniciar sesión.</li>
+                    <li>Actualizar una licencia limpia el caché y las sesiones para evitar capacidades antiguas.</li>
+                </ul>
+            </section>
+
+            <section class="manual-section technical" id="base-datos">
+                <div class="section-heading">
+                    <span class="section-icon">🗄️</span>
+                    <div>
+                        <h2>Sección técnica: base de datos y tablas</h2>
+                        <p>Diccionario funcional de los esquemas principales.</p>
+                    </div>
+                </div>
+
+                <h3>Esquema <code>org</code>: organización y terceros</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Tabla</th><th>Significado y uso</th></tr></thead>
+                        <tbody>
+                            <tr><td>org.Region / org.City</td><td>Catálogo geográfico compartido por sucursales, clientes y proveedores.</td></tr>
+                            <tr><td>org.Branch</td><td>Sucursal operativa. Es la unidad principal de alcance y seguridad.</td></tr>
+                            <tr><td>org.User</td><td>Identidad local del usuario; no contiene por sí sola todos los permisos.</td></tr>
+                            <tr><td>org.Role / org.UserRole</td><td>Roles disponibles y asignación de roles a usuarios.</td></tr>
+                            <tr><td>org.UserBranch</td><td>Determina las sucursales que puede consultar u operar un usuario.</td></tr>
+                            <tr><td>org.CashRegister</td><td>Caja vinculada con sucursal y bodega.</td></tr>
+                            <tr><td>org.UserCashRegister</td><td>Asignación explícita de cajas a usuarios.</td></tr>
+                            <tr><td>org.PosTerminal / org.CashRegisterDevice</td><td>Terminales y dispositivos relacionados con el cobro.</td></tr>
+                            <tr><td>org.Customer / org.CustomerSegment</td><td>Clientes, crédito y clasificación comercial.</td></tr>
+                            <tr><td>org.Supplier</td><td>Proveedor utilizado por productos y compras.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Esquema <code>inv</code>: catálogo e inventario</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Tabla</th><th>Significado y uso</th></tr></thead>
+                        <tbody>
+                            <tr><td>inv.Category</td><td>Jerarquía de categorías y subcategorías.</td></tr>
+                            <tr><td>inv.Brand / inv.Model</td><td>Marca y modelo comercial.</td></tr>
+                            <tr><td>inv.Property / inv.PropertyOption</td><td>Propiedades configurables y sus opciones.</td></tr>
+                            <tr><td>inv.Item</td><td>Maestro del producto: nombre, clasificación, impuesto, unidad y reglas generales.</td></tr>
+                            <tr><td>inv.ItemVariant</td><td>Unidad concreta vendible: SKU, código principal, costo, precio base y número de parte opcional (<code>NoParte</code>).</td></tr>
+                            <tr><td>inv.ItemVariantBarcode</td><td>Códigos de barra adicionales por variante.</td></tr>
+                            <tr><td>inv.VariantPropertyValue</td><td>Valores de propiedades de una variante.</td></tr>
+                            <tr><td>inv.ItemImage</td><td>Imágenes asociadas al producto.</td></tr>
+                            <tr><td>inv.Warehouse</td><td>Bodega perteneciente a una sucursal.</td></tr>
+                            <tr><td>inv.Stock</td><td>Existencia actual por variante y bodega. No sustituye al kardex.</td></tr>
+                            <tr><td>inv.VariantComposition</td><td>Composición vigente de kits.</td></tr>
+                            <tr><td>inv.KitComponentMovement</td><td>Trazabilidad de consumo y reversión de componentes.</td></tr>
+                            <tr><td>inv.StockAdjustment / Line / Audit</td><td>Cabecera, detalle y auditoría de ajustes.</td></tr>
+                            <tr><td>inv.WarehouseTransfer / Line / Audit</td><td>Traslados entre bodegas y sus cambios de estado.</td></tr>
+                            <tr><td>inv.AdjustmentReason</td><td>Motivos sembrados o administrados para justificar ajustes.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Esquemas de ventas, caja y kardex</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Tabla</th><th>Significado y uso</th></tr></thead>
+                        <tbody>
+                            <tr><td>sales.Transaction</td><td>Cabecera de factura: turno, usuario, cliente, totales, pagos, saldo y estado.</td></tr>
+                            <tr><td>sales.TransactionLine</td><td>Productos, cantidades, precios, descuentos, impuestos y costo histórico.</td></tr>
+                            <tr><td>sales.TransactionLineComponent</td><td>Snapshot de los componentes de kit usados por una línea.</td></tr>
+                            <tr><td>sales.TransactionPayment</td><td>Formas de pago, moneda, referencia y monto.</td></tr>
+                            <tr><td>sales.SalesQuotation / SalesQuotationLine</td><td>Cotizaciones de venta creadas desde POS o app móvil; vigencia, estado y conversión a factura.</td></tr>
+                            <tr><td>sales.TransactionReturn / ReturnLine</td><td>Devolución y líneas vinculadas con la factura original.</td></tr>
+                            <tr><td>sales.VariantPrice / PriceType</td><td>Precios por variante y tipo.</td></tr>
+                            <tr><td>sales.ProductRelation</td><td>Relaciones de productos: relacionados, surtidos o sustitutos.</td></tr>
+                            <tr><td>sales.DiscountAuthorization</td><td>Auditoría de autorizaciones de descuento.</td></tr>
+                            <tr><td>sales.Bank / BankAccount</td><td>Banco sembrado y cuentas propias de la empresa.</td></tr>
+                            <tr><td>cash.Shift</td><td>Turno de caja, apertura, cierre, sistema y diferencia.</td></tr>
+                            <tr><td>cash.ShiftCashCount / ShiftCardCount</td><td>Conteos de efectivo y tarjetas por turno.</td></tr>
+                            <tr><td>cash.ShiftCashMovement</td><td>Entradas y salidas extraordinarias del turno.</td></tr>
+                            <tr><td>cash.PettyCashBalance</td><td>Saldo operativo de caja chica.</td></tr>
+                            <tr><td>kdx.StockLedger</td><td>Kardex inmutable de movimientos, referencia, usuario, costo y saldo.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Compras, gastos y promociones</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Esquema / tablas</th><th>Significado y uso</th></tr></thead>
+                        <tbody>
+                            <tr><td>purch.Quotation / QuotationLine</td><td>Cotización recibida de proveedor.</td></tr>
+                            <tr><td>purch.PurchaseOrder / Line / Audit</td><td>Orden, detalle y cambios de estado.</td></tr>
+                            <tr><td>purch.GoodsReceipt / Line</td><td>Recepción física que alimenta inventario.</td></tr>
+                            <tr><td>exp.Expense</td><td>Gasto con sucursal, origen, beneficiario, moneda, caja o cuenta.</td></tr>
+                            <tr><td>exp.ExpenseType / ExpenseOrigin / ExpensePayee</td><td>Catálogos para clasificar el gasto.</td></tr>
+                            <tr><td>pric.Worksheet / WorksheetAudit</td><td>Hojas de trabajo de precio y auditoría.</td></tr>
+                            <tr><td>pric.Promotion / PromotionScope</td><td>Promoción y alcance por entidad comercial.</td></tr>
+                            <tr><td>pric.Offer / OfferProduct / Reward</td><td>Condición de oferta, productos y regalías.</td></tr>
+                            <tr><td>promo.Promotion</td><td>Modelo adicional de promoción usado por integraciones específicas.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Configuración, seguridad y reportes</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Tabla</th><th>Significado y uso</th></tr></thead>
+                        <tbody>
+                            <tr><td>sec.Parameters</td><td>Parámetros tipados; contiene valores protegidos que no deben exponerse.</td></tr>
+                            <tr><td>sec.Permission / sec.RolePermission</td><td>Permisos funcionales y asociación con roles.</td></tr>
+                            <tr><td>sec.MenuItem / sec.RoleMenu</td><td>Árbol de navegación y opciones visibles por rol.</td></tr>
+                            <tr><td>sec.SupervisorOverrideLog</td><td>Auditoría de autorizaciones excepcionales.</td></tr>
+                            <tr><td>sec.LicenseUpdateAudit</td><td>Hash y contexto de cambios de licencia principal, sin guardar el secreto.</td></tr>
+                            <tr><td>sec.ReportKeyUpdateAudit</td><td>Auditoría independiente de licencia de reportes e IDs resultantes.</td></tr>
+                            <tr><td>report.ReportsConfiguration</td><td>Definición, query, layout, GUID y HTML de ayuda del reporte.</td></tr>
+                            <tr><td>report.ReportParameters</td><td>Filtros, tipo de control, catálogo, orden y distribución.</td></tr>
+                            <tr><td>util.DataQuery</td><td>Registro de QueryId permitidos y SQL asociado.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout danger">
+                    <strong>Regla de integridad</strong>
+                    No elimine cabeceras con líneas, usuarios referenciados, bodegas con movimientos ni catálogos
+                    usados. Respete claves foráneas, estados y procedimientos transaccionales.
+                </div>
+            </section>
+
+            <section class="manual-section technical" id="superusuario">
+                <div class="section-heading">
+                    <span class="section-icon">🔐</span>
+                    <div>
+                        <h2>Usuario técnico protegido: superusuario</h2>
+                        <p>Cuenta de recuperación dedicada exclusivamente a la administración de licencias.</p>
+                    </div>
+                </div>
+
+                <div class="callout warning">
+                    <strong>No es un administrador operativo</strong>
+                    <code>superusuario</code> no debe vender, autorizar descuentos, abrir cajas, administrar
+                    catálogos ni ejecutar consultas genéricas. Su única función es consultar y reemplazar la
+                    licencia principal y la licencia de reportes.
+                </div>
+
+                <h3>Identidad y acceso efectivo</h3>
+                <div class="flow">
+                    <span>superusuario</span><i>→</i><span>Administrador de licencia</span><i>→</i>
+                    <span>SEC_EDIT_LICENSE</span><i>→</i><span>/Seguridad/Licencia</span>
+                </div>
+                <ul>
+                    <li><code>org.User.IsSystemUser = 1</code> identifica la única cuenta técnica.</li>
+                    <li><code>org.Role.IsSystemRole = 1</code> identifica el rol reservado.</li>
+                    <li>El JWT incorpora <code>is_system_user=true</code> y la política del API exige ese claim junto con <code>SEC_EDIT_LICENSE</code>.</li>
+                    <li>El menú se construye de forma aislada con una sola opción: <strong>Seguridad → Editar licencia</strong>.</li>
+                    <li>Puede entrar al editor aunque la licencia principal esté vencida o inválida, permitiendo recuperar la instalación.</li>
+                </ul>
+
+                <h3>Elementos de los que queda excluido</h3>
+                <div class="grid-2">
+                    <article class="info-card">
+                        <h4>Interfaz y catálogos</h4>
+                        <ul>
+                            <li>Lista y mantenimiento de usuarios.</li>
+                            <li>Lista y mantenimiento de roles.</li>
+                            <li>Selectores de usuarios, dispositivos y filtros de reportes.</li>
+                            <li>Conteo de usuarios consumidos por la licencia.</li>
+                        </ul>
+                    </article>
+                    <article class="info-card">
+                        <h4>Operación</h4>
+                        <ul>
+                            <li>Sucursales, bodegas, cajas y dispositivos.</li>
+                            <li>POS y autorizaciones de supervisor.</li>
+                            <li>DataQuery y endpoints distintos de licencia.</li>
+                            <li>Reportes, etiquetas y módulos administrativos.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <h3>Defensas aplicadas</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Capa</th><th>Protección</th></tr></thead>
+                        <tbody>
+                            <tr><td>Base de datos</td><td>Índices filtrados garantizan una sola cuenta y un solo rol técnicos. Triggers impiden modificar identidad, rol, sucursales, cajas, dispositivos, permiso y menú reservados.</td></tr>
+                            <tr><td>Procedimientos</td><td>Los mantenimientos de usuarios y asignaciones rechazan IDs protegidos. Los procedimientos de licencia exigen que el actor sea el usuario técnico activo.</td></tr>
+                            <tr><td>API</td><td>Middleware deniega cualquier endpoint autenticado salvo <code>/api/license/*</code> y la lectura segura necesaria para reconstruir la sesión.</td></tr>
+                            <tr><td>Web</td><td>Redirige cualquier navegación operativa al editor y rechaza permisos distintos de <code>SEC_EDIT_LICENSE</code>.</td></tr>
+                            <tr><td>Sesiones antiguas</td><td>La comprobación también reconoce el nombre protegido para bloquear tokens emitidos antes de incorporar el claim.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Parche e instalación</h3>
+                <p>
+                    Aplique <code>Util/system-user-protection-patch.sql</code> después de confirmar que existe
+                    exactamente un usuario llamado <code>superusuario</code>. El parche no crea la cuenta ni
+                    cambia su contraseña: la marca, crea el rol técnico, retira asignaciones operativas y protege
+                    la configuración. Es idempotente y debe probarse dos veces.
+                </p>
+                <p>
+                    <code>Util/clean-installation-data.sql</code> conserva tanto <code>admin</code> como
+                    <code>superusuario</code>. Admin recibe accesos operativos, pero la edición de licencias
+                    permanece exclusivamente en la cuenta técnica.
+                </p>
+
+                <h3>Mantenimiento de emergencia por DBA</h3>
+                <p>
+                    La cuenta no puede editarse desde SAVI. Si debe cambiarse su hash de contraseña o repararse
+                    una asignación, abra una conexión SQL administrativa, establezca temporalmente el contexto
+                    de mantenimiento, realice el cambio y elimine el contexto en la misma sesión:
+                </p>
+                <pre><code>EXEC sys.sp_set_session_context
+    @key = N'ALLOW_SYSTEM_USER_MAINTENANCE', @value = 1;
+
+-- Ejemplo: UPDATE org.[User] SET PasswordHash = '...' WHERE IsSystemUser = 1;
+
+EXEC sys.sp_set_session_context
+    @key = N'ALLOW_SYSTEM_USER_MAINTENANCE', @value = NULL;</code></pre>
+
+                <div class="callout danger">
+                    <strong>Custodia de credenciales</strong>
+                    Mantenga la contraseña fuera de navegadores compartidos y gestores no autorizados. Nunca
+                    copie contraseñas, JWT, <code>LICENCEID</code> o <code>REPORTKEY</code> en tickets, logs,
+                    capturas o documentación entregada al cliente.
+                </div>
+
+                <h3>Verificación posterior</h3>
+                <ul class="checklist">
+                    <li>El login redirige directamente a <code>/Seguridad/Licencia</code>.</li>
+                    <li>El menú contiene únicamente Seguridad y Editar licencia.</li>
+                    <li>La cuenta no aparece en Usuarios, dispositivos ni filtros de reportes.</li>
+                    <li>El POS no la acepta como supervisor.</li>
+                    <li>Una llamada a otro endpoint devuelve <code>SYSTEM_USER_SCOPE_RESTRICTED</code>.</li>
+                    <li>Admin no puede editar licencias aunque conserve otros permisos administrativos.</li>
+                    <li>La actualización de licencia audita usuario, fecha UTC, motivo y hashes sin guardar secretos.</li>
+                </ul>
+            </section>
+
+            <section class="manual-section technical" id="permisos">
+                <div class="section-heading">
+                    <span class="section-icon">🛡️</span>
+                    <div>
+                        <h2>Sección técnica: permisos, menú y licencias</h2>
+                        <p>Cómo se determina el acceso efectivo a una función.</p>
+                    </div>
+                </div>
+
+                <h3>RBAC</h3>
+                <div class="flow">
+                    <span>org.User</span><i>→</i><span>org.UserRole</span><i>→</i><span>org.Role</span><i>→</i>
+                    <span>sec.RolePermission</span><i>→</i><span>sec.Permission</span>
+                </div>
+                <p>
+                    Los permisos representan acciones. El menú se administra de forma separada mediante
+                    <code>sec.MenuItem</code> y <code>sec.RoleMenu</code>. Para acceder normalmente se necesita
+                    tanto la opción del rol como el permiso exigido por controlador o endpoint.
+                </p>
+
+                <h3>Permisos funcionales frecuentes</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Módulo</th><th>Permisos relevantes</th></tr></thead>
+                        <tbody>
+                            <tr><td>POS</td><td><code>POS_ACCESS</code>, <code>POS_OPEN_SHIFT</code>, <code>POS_CLOSE_SHIFT</code>, <code>POS_VOID_TICKET</code>, <code>POS_VOID_LINE</code>, <code>POS_APPLY_DISCOUNT</code>, <code>POS_PROCESS_RETURN</code>.</td></tr>
+                            <tr><td>Inventario</td><td><code>INV_MANAGE_PRODUCTS</code>, <code>INV_MANUAL_ADJUST</code>, <code>INV_ADJUST_AUTHORIZE</code>, <code>INV_TRANSFER_REGISTER</code>, <code>INV_TRANSFER_AUTHORIZE</code>, <code>INV_MANAGE_KITS</code>.</td></tr>
+                            <tr><td>Compras</td><td><code>PURCH_QUOTE_REGISTER</code>, <code>PURCH_PO_REGISTER</code>, <code>PURCH_PO_AUTHORIZE</code>, <code>PURCH_RECEIPT_REGISTER</code>, <code>PURCH_RECEIPT_CONFIRM</code>.</td></tr>
+                            <tr><td>Precios y gastos</td><td><code>PRIC_WORKSHEET_REGISTER</code>, <code>PRIC_WORKSHEET_AUTHORIZE</code>, <code>EXP_REGISTER</code>.</td></tr>
+                            <tr><td>Sistema</td><td><code>SYS_MANAGE_USERS</code>, <code>INV_PRINT_LABELS</code>, <code>SEC_EDIT_LICENSE</code>.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Alcance organizativo</h3>
+                <p>
+                    <code>org.UserBranch</code> limita sucursales y, por relación, bodegas, cajas y reportes.
+                    <code>org.UserCashRegister</code> limita cajas asignadas. Los filtros del navegador no sustituyen
+                    estas reglas: el API y SQL deben aplicarlas.
+                </p>
+
+                <h3>Licencia principal</h3>
+                <p>
+                    La licencia controla vigencia, plan y capacidades como usuarios, sucursales, bodegas,
+                    cajas, complejidad de reportes y generador de etiquetas. El servicio conserva un estado
+                    cacheado con copia defensiva y lo invalida al actualizar.
+                </p>
+
+                <h3>Licencia de reportes</h3>
+                <p>
+                    <code>REPORTKEY</code> es un GUID firmado y vinculado con la licencia principal por la DLL.
+                    Se decodifica en IDs positivos, distintos y ordenados. Si falta, está alterado o no valida,
+                    se autorizan cero reportes sin invalidar otras funciones.
+                </p>
+
+                <div class="callout info">
+                    <strong>Regla acumulativa para reportes</strong>
+                    Licencia principal válida y vigente + licencia de reportes válida con el ID + menú del rol +
+                    sucursal asignada. Ocultar el menú no reemplaza la autorización del API.
+                </div>
+
+                <h3>Actualización segura</h3>
+                <ul>
+                    <li>Requiere permiso <code>SEC_EDIT_LICENSE</code>, antiforgery y motivo administrativo.</li>
+                    <li>Usa endpoints y procedimientos dedicados, no el mantenimiento genérico.</li>
+                    <li>La auditoría guarda hashes y contexto, nunca el GUID completo.</li>
+                    <li>Después de guardar se invalidan caché y sesiones locales.</li>
+                </ul>
+
+                <figure class="manual-shot">
+                    <img src="images/20-licencias.png" alt="Administración de licencias">
+                    <figcaption>Captura sugerida: licencia del sistema y licencia de reportes sin exponer valores.</figcaption>
+                </figure>
+            </section>
+
+            <section class="manual-section technical" id="reportes-tecnico">
+                <div class="section-heading">
+                    <span class="section-icon">📈</span>
+                    <div>
+                        <h2>Sección técnica: motor dinámico de reportes</h2>
+                        <p>Metadatos, consultas, filtros, seguridad y presentación.</p>
+                    </div>
+                </div>
+
+                <h3>Componentes</h3>
+                <ul>
+                    <li><code>report.ReportsConfiguration</code>: título, query, tipo, GUID, layout y ayuda HTML.</li>
+                    <li><code>report.ReportParameters</code>: nombre, control, catálogo, orden, fila y columna.</li>
+                    <li><code>report.vwDinamicCatalogsList</code>: registro de catálogos disponibles.</li>
+                    <li><code>report.spReportParameterCatalogs</code>: opciones filtradas por usuario.</li>
+                    <li><code>report.spBuildDynamicQueryNew</code>: valida y sustituye parámetros configurados.</li>
+                    <li><code>render-report.js</code>: carga metadatos, controles y datos.</li>
+                    <li><code>report-engine.js</code>: tabla, gráficos, KPI, formato, reglas y layout.</li>
+                </ul>
+
+                <h3>Seguridad del query</h3>
+                <p>
+                    El procedimiento rechaza parámetros no configurados, valida números y fechas, escapa texto,
+                    convierte selecciones múltiples y obliga a conservar <code>@CurrentUserId</code> en la consulta.
+                    Las vistas sirven como fuentes estables para reducir doble conteo.
+                </p>
+
+                <h3>Agregar un reporte</h3>
+                <ol class="step-list">
+                    <li>Cree una vista con granularidad documentada y nombres estables.</li>
+                    <li>Registre <code>ReportsConfiguration</code> con ID, GUID, query seguro, layout y ayuda.</li>
+                    <li>Registre parámetros y catálogos; use dropdown cuando los valores sean enumerables.</li>
+                    <li>Cree el menú <code>/Reportes?id=N</code> y asigne roles.</li>
+                    <li>Emita una licencia de reportes que contenga el nuevo ID.</li>
+                    <li>Pruebe acceso autorizado, denegado, filtros y alcance por sucursal.</li>
+                </ol>
+
+                <div class="callout success">
+                    <strong>No requiere recompilar por autorización</strong>
+                    Si el visor y metamodelo ya soportan el reporte, cambiar los IDs firmados de REPORTKEY habilita
+                    el nuevo reporte sin agregar listas codificadas en Web o API.
+                </div>
+            </section>
+
+            <section class="manual-section technical" id="operacion-tecnica">
+                <div class="section-heading">
+                    <span class="section-icon">🔧</span>
+                    <div>
+                        <h2>Sección técnica: instalación, respaldo y diagnóstico</h2>
+                        <p>Prácticas para mantener el sistema sin comprometer datos ni seguridad.</p>
+                    </div>
+                </div>
+
+                <h3>Configuración de aplicaciones</h3>
+                <ul>
+                    <li>Proteja cadenas de conexión, secretos JWT y configuración de producción.</li>
+                    <li>Configure URL del API y rutas del módulo de etiquetas según el ambiente.</li>
+                    <li>Use HTTPS y políticas de origen adecuadas.</li>
+                    <li>No publique archivos de desarrollo, respaldos ni scripts con credenciales.</li>
+                </ul>
+
+                <h3>Respaldo</h3>
+                <ol class="step-list">
+                    <li>Realice respaldos completos según el volumen y política de recuperación.</li>
+                    <li>Conserve copias fuera del servidor principal y controle acceso.</li>
+                    <li>Pruebe restauración periódicamente en un ambiente aislado.</li>
+                    <li>Antes de parches, registre versión, respaldo, responsable y plan de reversión.</li>
+                </ol>
+
+                <h3>Parches SQL</h3>
+                <p>
+                    Prefiera scripts idempotentes con <code>CREATE OR ALTER</code>, validaciones de existencia,
+                    transacciones y <code>XACT_ABORT</code>. Aplique primero en copia, luego dos veces para comprobar
+                    idempotencia. Revise resultados, constraints e índices.
+                </p>
+
+                <h3>Limpieza para nueva instalación</h3>
+                <p>
+                    El archivo <code>Util/clean-installation-data.sql</code> elimina datos empresariales y operativos,
+                    conserva catálogos sembrados y deja el administrador. Es destructivo, requiere confirmación explícita
+                    y nunca debe ejecutarse sin respaldo verificado.
+                </p>
+
+                <h3>Diagnóstico</h3>
+                <ul>
+                    <li>Registre hora UTC/local, usuario, URL, acción y mensaje completo.</li>
+                    <li>Revise <code>sec.SysException</code> y logs sin copiar tokens o licencias.</li>
+                    <li>Compruebe primero autorización, configuración, datos maestros y estado del documento.</li>
+                    <li>Para bloqueos o errores de integridad, reproduzca en una copia antes de modificar SQL.</li>
+                    <li>Ejecute builds aislados cuando los binarios estén bloqueados por procesos activos.</li>
+                </ul>
+
+                <h3>Límites técnicos que debe conocer el administrador</h3>
+                <ul>
+                    <li>Sesiones y licencia se almacenan en memoria local; varias instancias requieren afinidad o una estrategia distribuida.</li>
+                    <li>El JWT no usa renovación automática. Una sesión Web puede necesitar nuevo inicio cuando expire el token del API.</li>
+                    <li><code>util.DataQuery</code> es superficie de ejecución: toda alta o modificación debe revisarse como cambio de seguridad.</li>
+                    <li><code>db.sql</code> es un snapshot parcial y puede no contener todas las extensiones actuales de compras, gastos, kits y reportes.</li>
+                    <li>La modificación de queries de reportes debe quedar restringida a administradores técnicos confiables.</li>
+                </ul>
+
+                <div class="callout danger">
+                    <strong>Datos sensibles</strong>
+                    Nunca incluya contraseñas, JWT, LICENCEID, REPORTKEY, cadenas de conexión o datos personales
+                    completos en capturas, tickets, logs o este manual.
+                </div>
+            </section>
+
+            <footer class="footer">
+                Manual SAVI · Sitio estático sin dependencias · Las opciones visibles dependen del rol y la licencia.
+            </footer>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Volver al inicio">↑</button>
+    <script src="app.js"></script>
+</body>
+</html>
